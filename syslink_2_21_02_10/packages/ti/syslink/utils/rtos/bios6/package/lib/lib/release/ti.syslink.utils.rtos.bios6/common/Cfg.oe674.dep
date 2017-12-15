@@ -1,0 +1,13 @@
+package/lib/lib/release/ti.syslink.utils.rtos.bios6/common/Cfg.oe674: ../../common/Cfg.c /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/string.h ../../common/../Cfg.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/linkage.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/String.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h 
+../../common/Cfg.c:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/string.h:
+../../common/../Cfg.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/linkage.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/String.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h:

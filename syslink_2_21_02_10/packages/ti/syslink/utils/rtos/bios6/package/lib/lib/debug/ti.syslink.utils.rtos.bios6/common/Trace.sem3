@@ -1,0 +1,2741 @@
+;******************************************************************************
+;* TI ARM C/C++ Codegen                                           Unix v5.1.3 *
+;* Date/Time created: Thu Dec  7 18:21:00 2017                                *
+;******************************************************************************
+	.compiler_opts --abi=eabi --arm_vmrs_si_workaround=on --code_state=16 --disable_dual_state --embedded_constants=on --endian=little --float_support=vfplib --hll_source=on --object_format=elf --quiet --silicon_version=7M3 --symdebug:dwarf --symdebug:dwarf_version=3 --unaligned_access=on 
+	.thumb
+
+$C$DW$CU	.dwtag  DW_TAG_compile_unit
+	.dwattr $C$DW$CU, DW_AT_name("../../common/Trace.c")
+	.dwattr $C$DW$CU, DW_AT_producer("TI TI ARM C/C++ Codegen Unix v5.1.3 Copyright (c) 1996-2013 Texas Instruments Incorporated")
+	.dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+	.dwattr $C$DW$CU, DW_AT_comp_dir("/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/rtos/bios6")
+
+$C$DW$1	.dwtag  DW_TAG_subprogram, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$1, DW_AT_TI_symbol_name("Osal_printf")
+	.dwattr $C$DW$1, DW_AT_declaration
+	.dwattr $C$DW$1, DW_AT_external
+	.dwattr $C$DW$1, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/OsalPrint.h")
+	.dwattr $C$DW$1, DW_AT_decl_line(0x50)
+	.dwattr $C$DW$1, DW_AT_decl_column(0x06)
+$C$DW$2	.dwtag  DW_TAG_formal_parameter
+	.dwattr $C$DW$2, DW_AT_type(*$C$DW$T$51)
+$C$DW$3	.dwtag  DW_TAG_unspecified_parameters
+	.dwendtag $C$DW$1
+
+
+$C$DW$4	.dwtag  DW_TAG_subprogram, DW_AT_name("TraceDrv_ioctl")
+	.dwattr $C$DW$4, DW_AT_TI_symbol_name("TraceDrv_ioctl")
+	.dwattr $C$DW$4, DW_AT_declaration
+	.dwattr $C$DW$4, DW_AT_external
+	.dwattr $C$DW$4, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrv.h")
+	.dwattr $C$DW$4, DW_AT_decl_line(0x4c)
+	.dwattr $C$DW$4, DW_AT_decl_column(0x06)
+$C$DW$5	.dwtag  DW_TAG_formal_parameter
+	.dwattr $C$DW$5, DW_AT_type(*$C$DW$T$22)
+$C$DW$6	.dwtag  DW_TAG_formal_parameter
+	.dwattr $C$DW$6, DW_AT_type(*$C$DW$T$49)
+	.dwendtag $C$DW$4
+
+	.global	curTrace
+	.data
+	.align	4
+	.elfsym	curTrace,SYM_SIZE(4)
+curTrace:
+	.bits	0,32			; curTrace @ 0
+
+$C$DW$7	.dwtag  DW_TAG_variable, DW_AT_name("curTrace")
+	.dwattr $C$DW$7, DW_AT_TI_symbol_name("curTrace")
+	.dwattr $C$DW$7, DW_AT_location[DW_OP_addr curTrace]
+	.dwattr $C$DW$7, DW_AT_type(*$C$DW$T$68)
+	.dwattr $C$DW$7, DW_AT_external
+	.dwattr $C$DW$7, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$7, DW_AT_decl_line(0x44)
+	.dwattr $C$DW$7, DW_AT_decl_column(0x05)
+;	/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/bin/armacpia -@/tmp/49696W0dWlV 
+	.sect	".text:_GT_0trace"
+	.clink
+	.thumbfunc _GT_0trace
+	.thumb
+	.global	_GT_0trace
+
+$C$DW$8	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_0trace")
+	.dwattr $C$DW$8, DW_AT_low_pc(_GT_0trace)
+	.dwattr $C$DW$8, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$8, DW_AT_TI_symbol_name("_GT_0trace")
+	.dwattr $C$DW$8, DW_AT_external
+	.dwattr $C$DW$8, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$8, DW_AT_TI_begin_line(0x50)
+	.dwattr $C$DW$8, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$8, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$8, DW_AT_decl_line(0x50)
+	.dwattr $C$DW$8, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$8, DW_AT_TI_max_frame_size(0x10)
+	.dwpsn	file "../../common/Trace.c",line 81,column 1,is_stmt,address _GT_0trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_0trace
+$C$DW$9	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$9, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$9, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$9, DW_AT_location[DW_OP_reg0]
+$C$DW$10	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$10, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$10, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$10, DW_AT_location[DW_OP_reg1]
+$C$DW$11	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$11, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$11, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$11, DW_AT_location[DW_OP_reg2]
+;----------------------------------------------------------------------
+;  80 | _GT_0trace (UInt32 mask, GT_TraceClass classtype, Char * infoString)   
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_0trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 0 Args + 12 Auto + 4 Save = 16 byte                 *
+;*****************************************************************************
+_GT_0trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {A2, A3, A4, LR}      ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 16
+	.dwcfi	save_reg_to_mem, 14, -4
+	.dwcfi	save_reg_to_mem, 3, -8
+	.dwcfi	save_reg_to_mem, 2, -12
+	.dwcfi	save_reg_to_mem, 1, -16
+$C$DW$12	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$12, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$12, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$12, DW_AT_location[DW_OP_breg13 0]
+$C$DW$13	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$13, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$13, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$13, DW_AT_location[DW_OP_breg13 4]
+$C$DW$14	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$14, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$14, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$14, DW_AT_location[DW_OP_breg13 8]
+        STR       A3, [SP, #8]          ; [DPU_3_PIPE] |81| 
+        STR       A2, [SP, #4]          ; [DPU_3_PIPE] |81| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |81| 
+	.dwpsn	file "../../common/Trace.c",line 83,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  83 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+;  84 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |83| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |83| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |83| 
+        BNE       ||$C$L3||             ; [DPU_3_PIPE] |83| 
+        ; BRANCHCC OCCURS {||$C$L3||}    ; [] |83| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 85,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  85 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |85| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |85| 
+        BEQ       ||$C$L1||             ; [DPU_3_PIPE] |85| 
+        ; BRANCHCC OCCURS {||$C$L1||}    ; [] |85| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |85| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |85| 
+        BNE       ||$C$L2||             ; [DPU_3_PIPE] |85| 
+        ; BRANCHCC OCCURS {||$C$L2||}    ; [] |85| 
+;* --------------------------------------------------------------------------*
+||$C$L1||:    
+	.dwpsn	file "../../common/Trace.c",line 86,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  86 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |86| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |86| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |86| 
+        BNE       ||$C$L3||             ; [DPU_3_PIPE] |86| 
+        ; BRANCHCC OCCURS {||$C$L3||}    ; [] |86| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 87,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  87 | Osal_printf (infoString);                                              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |87| 
+$C$DW$15	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$15, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$15, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$15, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |87| 
+        ; CALL OCCURS {Osal_printf }     ; [] |87| 
+	.dwpsn	file "../../common/Trace.c",line 89,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  90 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L3||             ; [DPU_3_PIPE] |89| 
+        ; BRANCH OCCURS {||$C$L3||}      ; [] |89| 
+;* --------------------------------------------------------------------------*
+||$C$L2||:    
+	.dwpsn	file "../../common/Trace.c",line 92,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  92 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |92| 
+        LDR       A2, [SP, #4]          ; [DPU_3_PIPE] |92| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |92| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |92| 
+        BHI       ||$C$L3||             ; [DPU_3_PIPE] |92| 
+        ; BRANCHCC OCCURS {||$C$L3||}    ; [] |92| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 96,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+;  96 | Osal_printf (infoString);                                              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |96| 
+$C$DW$16	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$16, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$16, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$16, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |96| 
+        ; CALL OCCURS {Osal_printf }     ; [] |96| 
+	.dwpsn	file "../../common/Trace.c",line 100,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L3||:    
+$C$DW$17	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$17, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$17, DW_AT_TI_return
+        POP       {A2, A3, A4, PC}      ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$8, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$8, DW_AT_TI_end_line(0x64)
+	.dwattr $C$DW$8, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$8
+
+	.sect	".text:_GT_1trace"
+	.clink
+	.thumbfunc _GT_1trace
+	.thumb
+	.global	_GT_1trace
+
+$C$DW$18	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_1trace")
+	.dwattr $C$DW$18, DW_AT_low_pc(_GT_1trace)
+	.dwattr $C$DW$18, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$18, DW_AT_TI_symbol_name("_GT_1trace")
+	.dwattr $C$DW$18, DW_AT_external
+	.dwattr $C$DW$18, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$18, DW_AT_TI_begin_line(0x70)
+	.dwattr $C$DW$18, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$18, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$18, DW_AT_decl_line(0x70)
+	.dwattr $C$DW$18, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$18, DW_AT_TI_max_frame_size(0x18)
+	.dwpsn	file "../../common/Trace.c",line 116,column 1,is_stmt,address _GT_1trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_1trace
+$C$DW$19	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$19, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$19, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$19, DW_AT_location[DW_OP_reg0]
+$C$DW$20	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$20, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$20, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$20, DW_AT_location[DW_OP_reg1]
+$C$DW$21	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$21, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$21, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$21, DW_AT_location[DW_OP_reg2]
+$C$DW$22	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param")
+	.dwattr $C$DW$22, DW_AT_TI_symbol_name("param")
+	.dwattr $C$DW$22, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$22, DW_AT_location[DW_OP_reg3]
+;----------------------------------------------------------------------
+; 112 | _GT_1trace (UInt32         mask,                                       
+; 113 | GT_TraceClass  classtype,                                              
+; 114 | Char *         infoString,                                             
+; 115 | UInt32         param)                                                  
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_1trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 0 Args + 16 Auto + 4 Save = 20 byte                 *
+;*****************************************************************************
+_GT_1trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 24
+$C$DW$23	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$23, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$23, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$23, DW_AT_location[DW_OP_breg13 0]
+$C$DW$24	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$24, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$24, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$24, DW_AT_location[DW_OP_breg13 4]
+$C$DW$25	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$25, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$25, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$25, DW_AT_location[DW_OP_breg13 8]
+$C$DW$26	.dwtag  DW_TAG_variable, DW_AT_name("param")
+	.dwattr $C$DW$26, DW_AT_TI_symbol_name("param")
+	.dwattr $C$DW$26, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$26, DW_AT_location[DW_OP_breg13 12]
+        STR       A4, [SP, #12]         ; [DPU_3_PIPE] |116| 
+        STR       A3, [SP, #8]          ; [DPU_3_PIPE] |116| 
+        STR       A2, [SP, #4]          ; [DPU_3_PIPE] |116| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |116| 
+	.dwpsn	file "../../common/Trace.c",line 118,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 118 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 119 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |118| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |118| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |118| 
+        BNE       ||$C$L6||             ; [DPU_3_PIPE] |118| 
+        ; BRANCHCC OCCURS {||$C$L6||}    ; [] |118| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 120,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 120 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |120| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |120| 
+        BEQ       ||$C$L4||             ; [DPU_3_PIPE] |120| 
+        ; BRANCHCC OCCURS {||$C$L4||}    ; [] |120| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |120| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |120| 
+        BNE       ||$C$L5||             ; [DPU_3_PIPE] |120| 
+        ; BRANCHCC OCCURS {||$C$L5||}    ; [] |120| 
+;* --------------------------------------------------------------------------*
+||$C$L4||:    
+	.dwpsn	file "../../common/Trace.c",line 121,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 121 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |121| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |121| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |121| 
+        BNE       ||$C$L6||             ; [DPU_3_PIPE] |121| 
+        ; BRANCHCC OCCURS {||$C$L6||}    ; [] |121| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 122,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 122 | Osal_printf (infoString, param);                                       
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |122| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |122| 
+$C$DW$27	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$27, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$27, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$27, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |122| 
+        ; CALL OCCURS {Osal_printf }     ; [] |122| 
+	.dwpsn	file "../../common/Trace.c",line 124,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 125 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L6||             ; [DPU_3_PIPE] |124| 
+        ; BRANCH OCCURS {||$C$L6||}      ; [] |124| 
+;* --------------------------------------------------------------------------*
+||$C$L5||:    
+	.dwpsn	file "../../common/Trace.c",line 127,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 127 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |127| 
+        LDR       A2, [SP, #4]          ; [DPU_3_PIPE] |127| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |127| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |127| 
+        BHI       ||$C$L6||             ; [DPU_3_PIPE] |127| 
+        ; BRANCHCC OCCURS {||$C$L6||}    ; [] |127| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 131,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 131 | Osal_printf (infoString, param);                                       
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |131| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |131| 
+$C$DW$28	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$28, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$28, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$28, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |131| 
+        ; CALL OCCURS {Osal_printf }     ; [] |131| 
+	.dwpsn	file "../../common/Trace.c",line 135,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L6||:    
+        ADD       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$29	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$29, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$29, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$18, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$18, DW_AT_TI_end_line(0x87)
+	.dwattr $C$DW$18, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$18
+
+	.sect	".text:_GT_2trace"
+	.clink
+	.thumbfunc _GT_2trace
+	.thumb
+	.global	_GT_2trace
+
+$C$DW$30	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_2trace")
+	.dwattr $C$DW$30, DW_AT_low_pc(_GT_2trace)
+	.dwattr $C$DW$30, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$30, DW_AT_TI_symbol_name("_GT_2trace")
+	.dwattr $C$DW$30, DW_AT_external
+	.dwattr $C$DW$30, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$30, DW_AT_TI_begin_line(0x94)
+	.dwattr $C$DW$30, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$30, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$30, DW_AT_decl_line(0x94)
+	.dwattr $C$DW$30, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$30, DW_AT_TI_max_frame_size(0x18)
+	.dwpsn	file "../../common/Trace.c",line 153,column 1,is_stmt,address _GT_2trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_2trace
+$C$DW$31	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$31, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$31, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$31, DW_AT_location[DW_OP_reg0]
+$C$DW$32	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$32, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$32, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$32, DW_AT_location[DW_OP_reg1]
+$C$DW$33	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$33, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$33, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$33, DW_AT_location[DW_OP_reg2]
+$C$DW$34	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param0")
+	.dwattr $C$DW$34, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$34, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$34, DW_AT_location[DW_OP_reg3]
+$C$DW$35	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param1")
+	.dwattr $C$DW$35, DW_AT_TI_symbol_name("param1")
+	.dwattr $C$DW$35, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$35, DW_AT_location[DW_OP_breg13 24]
+;----------------------------------------------------------------------
+; 148 | _GT_2trace (UInt32         mask,                                       
+; 149 | GT_TraceClass  classtype,                                              
+; 150 | Char *         infoString,                                             
+; 151 | UInt32         param0,                                                 
+; 152 | UInt32         param1)                                                 
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_2trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 0 Args + 16 Auto + 4 Save = 20 byte                 *
+;*****************************************************************************
+_GT_2trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 24
+$C$DW$36	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$36, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$36, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$36, DW_AT_location[DW_OP_breg13 0]
+$C$DW$37	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$37, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$37, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$37, DW_AT_location[DW_OP_breg13 4]
+$C$DW$38	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$38, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$38, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$38, DW_AT_location[DW_OP_breg13 8]
+$C$DW$39	.dwtag  DW_TAG_variable, DW_AT_name("param0")
+	.dwattr $C$DW$39, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$39, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$39, DW_AT_location[DW_OP_breg13 12]
+        STR       A4, [SP, #12]         ; [DPU_3_PIPE] |153| 
+        STR       A3, [SP, #8]          ; [DPU_3_PIPE] |153| 
+        STR       A2, [SP, #4]          ; [DPU_3_PIPE] |153| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |153| 
+	.dwpsn	file "../../common/Trace.c",line 155,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 155 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 156 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |155| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |155| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |155| 
+        BNE       ||$C$L9||             ; [DPU_3_PIPE] |155| 
+        ; BRANCHCC OCCURS {||$C$L9||}    ; [] |155| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 157,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 157 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |157| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |157| 
+        BEQ       ||$C$L7||             ; [DPU_3_PIPE] |157| 
+        ; BRANCHCC OCCURS {||$C$L7||}    ; [] |157| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |157| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |157| 
+        BNE       ||$C$L8||             ; [DPU_3_PIPE] |157| 
+        ; BRANCHCC OCCURS {||$C$L8||}    ; [] |157| 
+;* --------------------------------------------------------------------------*
+||$C$L7||:    
+	.dwpsn	file "../../common/Trace.c",line 158,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 158 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |158| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |158| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |158| 
+        BNE       ||$C$L9||             ; [DPU_3_PIPE] |158| 
+        ; BRANCHCC OCCURS {||$C$L9||}    ; [] |158| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 159,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 159 | Osal_printf (infoString, param0, param1);                              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |159| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |159| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |159| 
+$C$DW$40	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$40, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$40, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$40, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |159| 
+        ; CALL OCCURS {Osal_printf }     ; [] |159| 
+	.dwpsn	file "../../common/Trace.c",line 161,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 162 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L9||             ; [DPU_3_PIPE] |161| 
+        ; BRANCH OCCURS {||$C$L9||}      ; [] |161| 
+;* --------------------------------------------------------------------------*
+||$C$L8||:    
+	.dwpsn	file "../../common/Trace.c",line 164,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 164 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |164| 
+        LDR       A2, [SP, #4]          ; [DPU_3_PIPE] |164| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |164| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |164| 
+        BHI       ||$C$L9||             ; [DPU_3_PIPE] |164| 
+        ; BRANCHCC OCCURS {||$C$L9||}    ; [] |164| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 168,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 168 | Osal_printf (infoString, param0, param1);                              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |168| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |168| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |168| 
+$C$DW$41	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$41, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$41, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$41, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |168| 
+        ; CALL OCCURS {Osal_printf }     ; [] |168| 
+	.dwpsn	file "../../common/Trace.c",line 172,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L9||:    
+        ADD       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$42	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$42, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$42, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$30, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$30, DW_AT_TI_end_line(0xac)
+	.dwattr $C$DW$30, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$30
+
+	.sect	".text:_GT_3trace"
+	.clink
+	.thumbfunc _GT_3trace
+	.thumb
+	.global	_GT_3trace
+
+$C$DW$43	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_3trace")
+	.dwattr $C$DW$43, DW_AT_low_pc(_GT_3trace)
+	.dwattr $C$DW$43, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$43, DW_AT_TI_symbol_name("_GT_3trace")
+	.dwattr $C$DW$43, DW_AT_external
+	.dwattr $C$DW$43, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$43, DW_AT_TI_begin_line(0xba)
+	.dwattr $C$DW$43, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$43, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$43, DW_AT_decl_line(0xba)
+	.dwattr $C$DW$43, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$43, DW_AT_TI_max_frame_size(0x18)
+	.dwpsn	file "../../common/Trace.c",line 192,column 1,is_stmt,address _GT_3trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_3trace
+$C$DW$44	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$44, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$44, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$44, DW_AT_location[DW_OP_reg0]
+$C$DW$45	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$45, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$45, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$45, DW_AT_location[DW_OP_reg1]
+$C$DW$46	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$46, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$46, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$46, DW_AT_location[DW_OP_reg2]
+$C$DW$47	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param0")
+	.dwattr $C$DW$47, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$47, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$47, DW_AT_location[DW_OP_reg3]
+$C$DW$48	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param1")
+	.dwattr $C$DW$48, DW_AT_TI_symbol_name("param1")
+	.dwattr $C$DW$48, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$48, DW_AT_location[DW_OP_breg13 24]
+$C$DW$49	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param2")
+	.dwattr $C$DW$49, DW_AT_TI_symbol_name("param2")
+	.dwattr $C$DW$49, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$49, DW_AT_location[DW_OP_breg13 28]
+;----------------------------------------------------------------------
+; 186 | _GT_3trace (UInt32         mask,                                       
+; 187 | GT_TraceClass  classtype,                                              
+; 188 | Char*          infoString,                                             
+; 189 | UInt32         param0,                                                 
+; 190 | UInt32         param1,                                                 
+; 191 | UInt32         param2)                                                 
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_3trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 0 Args + 16 Auto + 4 Save = 20 byte                 *
+;*****************************************************************************
+_GT_3trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 24
+$C$DW$50	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$50, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$50, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$50, DW_AT_location[DW_OP_breg13 0]
+$C$DW$51	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$51, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$51, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$51, DW_AT_location[DW_OP_breg13 4]
+$C$DW$52	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$52, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$52, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$52, DW_AT_location[DW_OP_breg13 8]
+$C$DW$53	.dwtag  DW_TAG_variable, DW_AT_name("param0")
+	.dwattr $C$DW$53, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$53, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$53, DW_AT_location[DW_OP_breg13 12]
+        STR       A4, [SP, #12]         ; [DPU_3_PIPE] |192| 
+        STR       A3, [SP, #8]          ; [DPU_3_PIPE] |192| 
+        STR       A2, [SP, #4]          ; [DPU_3_PIPE] |192| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |192| 
+	.dwpsn	file "../../common/Trace.c",line 194,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 194 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 195 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |194| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |194| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |194| 
+        BNE       ||$C$L12||            ; [DPU_3_PIPE] |194| 
+        ; BRANCHCC OCCURS {||$C$L12||}   ; [] |194| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 196,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 196 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |196| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |196| 
+        BEQ       ||$C$L10||            ; [DPU_3_PIPE] |196| 
+        ; BRANCHCC OCCURS {||$C$L10||}   ; [] |196| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |196| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |196| 
+        BNE       ||$C$L11||            ; [DPU_3_PIPE] |196| 
+        ; BRANCHCC OCCURS {||$C$L11||}   ; [] |196| 
+;* --------------------------------------------------------------------------*
+||$C$L10||:    
+	.dwpsn	file "../../common/Trace.c",line 197,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 197 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |197| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |197| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |197| 
+        BNE       ||$C$L12||            ; [DPU_3_PIPE] |197| 
+        ; BRANCHCC OCCURS {||$C$L12||}   ; [] |197| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 198,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 198 | Osal_printf (infoString, param0, param1, param2);                      
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |198| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |198| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |198| 
+        LDR       A4, [SP, #28]         ; [DPU_3_PIPE] |198| 
+$C$DW$54	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$54, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$54, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$54, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |198| 
+        ; CALL OCCURS {Osal_printf }     ; [] |198| 
+	.dwpsn	file "../../common/Trace.c",line 200,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 201 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L12||            ; [DPU_3_PIPE] |200| 
+        ; BRANCH OCCURS {||$C$L12||}     ; [] |200| 
+;* --------------------------------------------------------------------------*
+||$C$L11||:    
+	.dwpsn	file "../../common/Trace.c",line 203,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 203 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |203| 
+        LDR       A2, [SP, #4]          ; [DPU_3_PIPE] |203| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |203| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |203| 
+        BHI       ||$C$L12||            ; [DPU_3_PIPE] |203| 
+        ; BRANCHCC OCCURS {||$C$L12||}   ; [] |203| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 207,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 207 | Osal_printf (infoString, param0, param1, param2);                      
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |207| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |207| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |207| 
+        LDR       A4, [SP, #28]         ; [DPU_3_PIPE] |207| 
+$C$DW$55	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$55, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$55, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$55, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |207| 
+        ; CALL OCCURS {Osal_printf }     ; [] |207| 
+	.dwpsn	file "../../common/Trace.c",line 211,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L12||:    
+        ADD       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$56	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$56, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$56, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$43, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$43, DW_AT_TI_end_line(0xd3)
+	.dwattr $C$DW$43, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$43
+
+	.sect	".text:_GT_4trace"
+	.clink
+	.thumbfunc _GT_4trace
+	.thumb
+	.global	_GT_4trace
+
+$C$DW$57	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_4trace")
+	.dwattr $C$DW$57, DW_AT_low_pc(_GT_4trace)
+	.dwattr $C$DW$57, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$57, DW_AT_TI_symbol_name("_GT_4trace")
+	.dwattr $C$DW$57, DW_AT_external
+	.dwattr $C$DW$57, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$57, DW_AT_TI_begin_line(0xe2)
+	.dwattr $C$DW$57, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$57, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$57, DW_AT_decl_line(0xe2)
+	.dwattr $C$DW$57, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$57, DW_AT_TI_max_frame_size(0x18)
+	.dwpsn	file "../../common/Trace.c",line 233,column 1,is_stmt,address _GT_4trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_4trace
+$C$DW$58	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$58, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$58, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$58, DW_AT_location[DW_OP_reg0]
+$C$DW$59	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$59, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$59, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$59, DW_AT_location[DW_OP_reg1]
+$C$DW$60	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$60, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$60, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$60, DW_AT_location[DW_OP_reg2]
+$C$DW$61	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param0")
+	.dwattr $C$DW$61, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$61, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$61, DW_AT_location[DW_OP_reg3]
+$C$DW$62	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param1")
+	.dwattr $C$DW$62, DW_AT_TI_symbol_name("param1")
+	.dwattr $C$DW$62, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$62, DW_AT_location[DW_OP_breg13 24]
+$C$DW$63	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param2")
+	.dwattr $C$DW$63, DW_AT_TI_symbol_name("param2")
+	.dwattr $C$DW$63, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$63, DW_AT_location[DW_OP_breg13 28]
+$C$DW$64	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param3")
+	.dwattr $C$DW$64, DW_AT_TI_symbol_name("param3")
+	.dwattr $C$DW$64, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$64, DW_AT_location[DW_OP_breg13 32]
+;----------------------------------------------------------------------
+; 226 | _GT_4trace (UInt32         mask,                                       
+; 227 | GT_TraceClass  classtype,                                              
+; 228 | Char*          infoString,                                             
+; 229 | UInt32         param0,                                                 
+; 230 | UInt32         param1,                                                 
+; 231 | UInt32         param2,                                                 
+; 232 | UInt32         param3)                                                 
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_4trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 4 Args + 16 Auto + 4 Save = 24 byte                 *
+;*****************************************************************************
+_GT_4trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 24
+$C$DW$65	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$65, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$65, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$65, DW_AT_location[DW_OP_breg13 4]
+$C$DW$66	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$66, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$66, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$66, DW_AT_location[DW_OP_breg13 8]
+$C$DW$67	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$67, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$67, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$67, DW_AT_location[DW_OP_breg13 12]
+$C$DW$68	.dwtag  DW_TAG_variable, DW_AT_name("param0")
+	.dwattr $C$DW$68, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$68, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$68, DW_AT_location[DW_OP_breg13 16]
+        STR       A4, [SP, #16]         ; [DPU_3_PIPE] |233| 
+        STR       A3, [SP, #12]         ; [DPU_3_PIPE] |233| 
+        STR       A2, [SP, #8]          ; [DPU_3_PIPE] |233| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |233| 
+	.dwpsn	file "../../common/Trace.c",line 235,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 235 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 236 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |235| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |235| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |235| 
+        BNE       ||$C$L15||            ; [DPU_3_PIPE] |235| 
+        ; BRANCHCC OCCURS {||$C$L15||}   ; [] |235| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 237,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 237 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |237| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |237| 
+        BEQ       ||$C$L13||            ; [DPU_3_PIPE] |237| 
+        ; BRANCHCC OCCURS {||$C$L13||}   ; [] |237| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |237| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |237| 
+        BNE       ||$C$L14||            ; [DPU_3_PIPE] |237| 
+        ; BRANCHCC OCCURS {||$C$L14||}   ; [] |237| 
+;* --------------------------------------------------------------------------*
+||$C$L13||:    
+	.dwpsn	file "../../common/Trace.c",line 238,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 238 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |238| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |238| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |238| 
+        BNE       ||$C$L15||            ; [DPU_3_PIPE] |238| 
+        ; BRANCHCC OCCURS {||$C$L15||}   ; [] |238| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 239,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 239 | Osal_printf (infoString, param0, param1, param2, param3);              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #32]         ; [DPU_3_PIPE] |239| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |239| 
+        LDR       A2, [SP, #16]         ; [DPU_3_PIPE] |239| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |239| 
+        LDR       A4, [SP, #28]         ; [DPU_3_PIPE] |239| 
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |239| 
+$C$DW$69	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$69, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$69, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$69, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |239| 
+        ; CALL OCCURS {Osal_printf }     ; [] |239| 
+	.dwpsn	file "../../common/Trace.c",line 241,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 242 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L15||            ; [DPU_3_PIPE] |241| 
+        ; BRANCH OCCURS {||$C$L15||}     ; [] |241| 
+;* --------------------------------------------------------------------------*
+||$C$L14||:    
+	.dwpsn	file "../../common/Trace.c",line 244,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 244 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #4]          ; [DPU_3_PIPE] |244| 
+        LDR       A2, [SP, #8]          ; [DPU_3_PIPE] |244| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |244| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |244| 
+        BHI       ||$C$L15||            ; [DPU_3_PIPE] |244| 
+        ; BRANCHCC OCCURS {||$C$L15||}   ; [] |244| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 248,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 248 | Osal_printf (infoString, param0, param1, param2, param3);              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #32]         ; [DPU_3_PIPE] |248| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |248| 
+        LDR       A2, [SP, #16]         ; [DPU_3_PIPE] |248| 
+        LDR       A3, [SP, #24]         ; [DPU_3_PIPE] |248| 
+        LDR       A4, [SP, #28]         ; [DPU_3_PIPE] |248| 
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |248| 
+$C$DW$70	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$70, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$70, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$70, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |248| 
+        ; CALL OCCURS {Osal_printf }     ; [] |248| 
+	.dwpsn	file "../../common/Trace.c",line 252,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L15||:    
+        ADD       SP, SP, #20           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$71	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$71, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$71, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$57, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$57, DW_AT_TI_end_line(0xfc)
+	.dwattr $C$DW$57, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$57
+
+	.sect	".text:_GT_5trace"
+	.clink
+	.thumbfunc _GT_5trace
+	.thumb
+	.global	_GT_5trace
+
+$C$DW$72	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_5trace")
+	.dwattr $C$DW$72, DW_AT_low_pc(_GT_5trace)
+	.dwattr $C$DW$72, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$72, DW_AT_TI_symbol_name("_GT_5trace")
+	.dwattr $C$DW$72, DW_AT_external
+	.dwattr $C$DW$72, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$72, DW_AT_TI_begin_line(0x10c)
+	.dwattr $C$DW$72, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$72, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$72, DW_AT_decl_line(0x10c)
+	.dwattr $C$DW$72, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$72, DW_AT_TI_max_frame_size(0x20)
+	.dwpsn	file "../../common/Trace.c",line 276,column 1,is_stmt,address _GT_5trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_5trace
+$C$DW$73	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$73, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$73, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$73, DW_AT_location[DW_OP_reg0]
+$C$DW$74	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$74, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$74, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$74, DW_AT_location[DW_OP_reg1]
+$C$DW$75	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$75, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$75, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$75, DW_AT_location[DW_OP_reg2]
+$C$DW$76	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param0")
+	.dwattr $C$DW$76, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$76, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$76, DW_AT_location[DW_OP_reg3]
+$C$DW$77	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param1")
+	.dwattr $C$DW$77, DW_AT_TI_symbol_name("param1")
+	.dwattr $C$DW$77, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$77, DW_AT_location[DW_OP_breg13 32]
+$C$DW$78	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param2")
+	.dwattr $C$DW$78, DW_AT_TI_symbol_name("param2")
+	.dwattr $C$DW$78, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$78, DW_AT_location[DW_OP_breg13 36]
+$C$DW$79	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param3")
+	.dwattr $C$DW$79, DW_AT_TI_symbol_name("param3")
+	.dwattr $C$DW$79, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$79, DW_AT_location[DW_OP_breg13 40]
+$C$DW$80	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param4")
+	.dwattr $C$DW$80, DW_AT_TI_symbol_name("param4")
+	.dwattr $C$DW$80, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$80, DW_AT_location[DW_OP_breg13 44]
+;----------------------------------------------------------------------
+; 268 | _GT_5trace (UInt32         mask,                                       
+; 269 | GT_TraceClass  classtype,                                              
+; 270 | Char*          infoString,                                             
+; 271 | UInt32         param0,                                                 
+; 272 | UInt32         param1,                                                 
+; 273 | UInt32         param2,                                                 
+; 274 | UInt32         param3,                                                 
+; 275 | UInt32         param4)                                                 
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_5trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 8 Args + 16 Auto + 4 Save = 28 byte                 *
+;*****************************************************************************
+_GT_5trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 32
+$C$DW$81	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$81, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$81, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$81, DW_AT_location[DW_OP_breg13 8]
+$C$DW$82	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$82, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$82, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$82, DW_AT_location[DW_OP_breg13 12]
+$C$DW$83	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$83, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$83, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$83, DW_AT_location[DW_OP_breg13 16]
+$C$DW$84	.dwtag  DW_TAG_variable, DW_AT_name("param0")
+	.dwattr $C$DW$84, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$84, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$84, DW_AT_location[DW_OP_breg13 20]
+        STR       A4, [SP, #20]         ; [DPU_3_PIPE] |276| 
+        STR       A3, [SP, #16]         ; [DPU_3_PIPE] |276| 
+        STR       A2, [SP, #12]         ; [DPU_3_PIPE] |276| 
+        STR       A1, [SP, #8]          ; [DPU_3_PIPE] |276| 
+	.dwpsn	file "../../common/Trace.c",line 278,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 278 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 279 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |278| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |278| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |278| 
+        BNE       ||$C$L18||            ; [DPU_3_PIPE] |278| 
+        ; BRANCHCC OCCURS {||$C$L18||}   ; [] |278| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 280,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 280 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |280| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |280| 
+        BEQ       ||$C$L16||            ; [DPU_3_PIPE] |280| 
+        ; BRANCHCC OCCURS {||$C$L16||}   ; [] |280| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |280| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |280| 
+        BNE       ||$C$L17||            ; [DPU_3_PIPE] |280| 
+        ; BRANCHCC OCCURS {||$C$L17||}   ; [] |280| 
+;* --------------------------------------------------------------------------*
+||$C$L16||:    
+	.dwpsn	file "../../common/Trace.c",line 281,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 281 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |281| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |281| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |281| 
+        BNE       ||$C$L18||            ; [DPU_3_PIPE] |281| 
+        ; BRANCHCC OCCURS {||$C$L18||}   ; [] |281| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 282,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 282 | Osal_printf (infoString,                                               
+; 283 |              param0,                                                   
+; 284 |              param1,                                                   
+; 285 |              param2,                                                   
+; 286 |              param3,                                                   
+; 287 |              param4);                                                  
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #40]         ; [DPU_3_PIPE] |282| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |282| 
+        LDR       A1, [SP, #44]         ; [DPU_3_PIPE] |282| 
+        LDR       A4, [SP, #36]         ; [DPU_3_PIPE] |282| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |282| 
+        LDR       A3, [SP, #32]         ; [DPU_3_PIPE] |282| 
+        LDR       A2, [SP, #20]         ; [DPU_3_PIPE] |282| 
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |282| 
+$C$DW$85	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$85, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$85, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$85, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |282| 
+        ; CALL OCCURS {Osal_printf }     ; [] |282| 
+	.dwpsn	file "../../common/Trace.c",line 289,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 290 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L18||            ; [DPU_3_PIPE] |289| 
+        ; BRANCH OCCURS {||$C$L18||}     ; [] |289| 
+;* --------------------------------------------------------------------------*
+||$C$L17||:    
+	.dwpsn	file "../../common/Trace.c",line 292,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 292 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |292| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |292| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |292| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |292| 
+        BHI       ||$C$L18||            ; [DPU_3_PIPE] |292| 
+        ; BRANCHCC OCCURS {||$C$L18||}   ; [] |292| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 296,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 296 | Osal_printf (infoString,                                               
+; 297 |              param0,                                                   
+; 298 |              param1,                                                   
+; 299 |              param2,                                                   
+; 300 |              param3,                                                   
+; 301 |              param4);                                                  
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #40]         ; [DPU_3_PIPE] |296| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |296| 
+        LDR       A1, [SP, #44]         ; [DPU_3_PIPE] |296| 
+        LDR       A4, [SP, #36]         ; [DPU_3_PIPE] |296| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |296| 
+        LDR       A3, [SP, #32]         ; [DPU_3_PIPE] |296| 
+        LDR       A2, [SP, #20]         ; [DPU_3_PIPE] |296| 
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |296| 
+$C$DW$86	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$86, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$86, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$86, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |296| 
+        ; CALL OCCURS {Osal_printf }     ; [] |296| 
+	.dwpsn	file "../../common/Trace.c",line 305,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L18||:    
+        ADD       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$87	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$87, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$87, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$72, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$72, DW_AT_TI_end_line(0x131)
+	.dwattr $C$DW$72, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$72
+
+	.sect	".text:_GT_6trace"
+	.clink
+	.thumbfunc _GT_6trace
+	.thumb
+	.global	_GT_6trace
+
+$C$DW$88	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_6trace")
+	.dwattr $C$DW$88, DW_AT_low_pc(_GT_6trace)
+	.dwattr $C$DW$88, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$88, DW_AT_TI_symbol_name("_GT_6trace")
+	.dwattr $C$DW$88, DW_AT_external
+	.dwattr $C$DW$88, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$88, DW_AT_TI_begin_line(0x141)
+	.dwattr $C$DW$88, DW_AT_TI_begin_column(0x01)
+	.dwattr $C$DW$88, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$88, DW_AT_decl_line(0x141)
+	.dwattr $C$DW$88, DW_AT_decl_column(0x01)
+	.dwattr $C$DW$88, DW_AT_TI_max_frame_size(0x20)
+	.dwpsn	file "../../common/Trace.c",line 330,column 1,is_stmt,address _GT_6trace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_6trace
+$C$DW$89	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$89, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$89, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$89, DW_AT_location[DW_OP_reg0]
+$C$DW$90	.dwtag  DW_TAG_formal_parameter, DW_AT_name("classtype")
+	.dwattr $C$DW$90, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$90, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$90, DW_AT_location[DW_OP_reg1]
+$C$DW$91	.dwtag  DW_TAG_formal_parameter, DW_AT_name("infoString")
+	.dwattr $C$DW$91, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$91, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$91, DW_AT_location[DW_OP_reg2]
+$C$DW$92	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param0")
+	.dwattr $C$DW$92, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$92, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$92, DW_AT_location[DW_OP_reg3]
+$C$DW$93	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param1")
+	.dwattr $C$DW$93, DW_AT_TI_symbol_name("param1")
+	.dwattr $C$DW$93, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$93, DW_AT_location[DW_OP_breg13 32]
+$C$DW$94	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param2")
+	.dwattr $C$DW$94, DW_AT_TI_symbol_name("param2")
+	.dwattr $C$DW$94, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$94, DW_AT_location[DW_OP_breg13 36]
+$C$DW$95	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param3")
+	.dwattr $C$DW$95, DW_AT_TI_symbol_name("param3")
+	.dwattr $C$DW$95, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$95, DW_AT_location[DW_OP_breg13 40]
+$C$DW$96	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param4")
+	.dwattr $C$DW$96, DW_AT_TI_symbol_name("param4")
+	.dwattr $C$DW$96, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$96, DW_AT_location[DW_OP_breg13 44]
+$C$DW$97	.dwtag  DW_TAG_formal_parameter, DW_AT_name("param5")
+	.dwattr $C$DW$97, DW_AT_TI_symbol_name("param5")
+	.dwattr $C$DW$97, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$97, DW_AT_location[DW_OP_breg13 48]
+;----------------------------------------------------------------------
+; 321 | _GT_6trace (UInt32         mask,                                       
+; 322 | GT_TraceClass  classtype,                                              
+; 323 | Char*          infoString,                                             
+; 324 | UInt32         param0,                                                 
+; 325 | UInt32         param1,                                                 
+; 326 | UInt32         param2,                                                 
+; 327 | UInt32         param3,                                                 
+; 328 | UInt32         param4,                                                 
+; 329 | UInt32         param5)                                                 
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_6trace                                                 *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 12 Args + 16 Auto + 4 Save = 32 byte                *
+;*****************************************************************************
+_GT_6trace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 32
+$C$DW$98	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$98, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$98, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$98, DW_AT_location[DW_OP_breg13 12]
+$C$DW$99	.dwtag  DW_TAG_variable, DW_AT_name("classtype")
+	.dwattr $C$DW$99, DW_AT_TI_symbol_name("classtype")
+	.dwattr $C$DW$99, DW_AT_type(*$C$DW$T$38)
+	.dwattr $C$DW$99, DW_AT_location[DW_OP_breg13 16]
+$C$DW$100	.dwtag  DW_TAG_variable, DW_AT_name("infoString")
+	.dwattr $C$DW$100, DW_AT_TI_symbol_name("infoString")
+	.dwattr $C$DW$100, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$100, DW_AT_location[DW_OP_breg13 20]
+$C$DW$101	.dwtag  DW_TAG_variable, DW_AT_name("param0")
+	.dwattr $C$DW$101, DW_AT_TI_symbol_name("param0")
+	.dwattr $C$DW$101, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$101, DW_AT_location[DW_OP_breg13 24]
+        STR       A4, [SP, #24]         ; [DPU_3_PIPE] |330| 
+        STR       A3, [SP, #20]         ; [DPU_3_PIPE] |330| 
+        STR       A2, [SP, #16]         ; [DPU_3_PIPE] |330| 
+        STR       A1, [SP, #12]         ; [DPU_3_PIPE] |330| 
+	.dwpsn	file "../../common/Trace.c",line 332,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 332 | if (    ((mask & GT_TRACESTATE_MASK) >> GT_TRACESTATE_SHIFT)           
+; 333 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |332| 
+        AND       A1, A1, #15           ; [DPU_3_PIPE] |332| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |332| 
+        BNE       ||$C$L21||            ; [DPU_3_PIPE] |332| 
+        ; BRANCHCC OCCURS {||$C$L21||}   ; [] |332| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 334,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 334 | if ((classtype == GT_ENTER) || (classtype == GT_LEAVE)) {              
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |334| 
+        CMP       A1, #327680           ; [DPU_3_PIPE] |334| 
+        BEQ       ||$C$L19||            ; [DPU_3_PIPE] |334| 
+        ; BRANCHCC OCCURS {||$C$L19||}   ; [] |334| 
+;* --------------------------------------------------------------------------*
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |334| 
+        CMP       A1, #393216           ; [DPU_3_PIPE] |334| 
+        BNE       ||$C$L20||            ; [DPU_3_PIPE] |334| 
+        ; BRANCHCC OCCURS {||$C$L20||}   ; [] |334| 
+;* --------------------------------------------------------------------------*
+||$C$L19||:    
+	.dwpsn	file "../../common/Trace.c",line 335,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 335 | if ((mask & GT_TRACEENTER_MASK) == GT_TraceEnter_Enable) {             
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |335| 
+        AND       A1, A1, #240          ; [DPU_3_PIPE] |335| 
+        CMP       A1, #16               ; [DPU_3_PIPE] |335| 
+        BNE       ||$C$L21||            ; [DPU_3_PIPE] |335| 
+        ; BRANCHCC OCCURS {||$C$L21||}   ; [] |335| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 336,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 336 | Osal_printf (infoString,                                               
+; 337 |              param0,                                                   
+; 338 |              param1,                                                   
+; 339 |              param2,                                                   
+; 340 |              param3,                                                   
+; 341 |              param4,                                                   
+; 342 |                                          param5);                      
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #40]         ; [DPU_3_PIPE] |336| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |336| 
+        LDR       A1, [SP, #44]         ; [DPU_3_PIPE] |336| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |336| 
+        LDR       A1, [SP, #48]         ; [DPU_3_PIPE] |336| 
+        STR       A1, [SP, #8]          ; [DPU_3_PIPE] |336| 
+        LDR       A4, [SP, #36]         ; [DPU_3_PIPE] |336| 
+        LDR       A3, [SP, #32]         ; [DPU_3_PIPE] |336| 
+        LDR       A2, [SP, #24]         ; [DPU_3_PIPE] |336| 
+        LDR       A1, [SP, #20]         ; [DPU_3_PIPE] |336| 
+$C$DW$102	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$102, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$102, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$102, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |336| 
+        ; CALL OCCURS {Osal_printf }     ; [] |336| 
+	.dwpsn	file "../../common/Trace.c",line 344,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 345 | else {                                                                 
+;----------------------------------------------------------------------
+        B         ||$C$L21||            ; [DPU_3_PIPE] |344| 
+        ; BRANCH OCCURS {||$C$L21||}     ; [] |344| 
+;* --------------------------------------------------------------------------*
+||$C$L20||:    
+	.dwpsn	file "../../common/Trace.c",line 347,column 13,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 347 | if ((mask & GT_TRACECLASS_MASK) >= classtype) {                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #12]         ; [DPU_3_PIPE] |347| 
+        LDR       A2, [SP, #16]         ; [DPU_3_PIPE] |347| 
+        AND       A1, A1, #983040       ; [DPU_3_PIPE] |347| 
+        CMP       A2, A1                ; [DPU_3_PIPE] |347| 
+        BHI       ||$C$L21||            ; [DPU_3_PIPE] |347| 
+        ; BRANCHCC OCCURS {||$C$L21||}   ; [] |347| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 351,column 17,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 351 | Osal_printf (infoString,                                               
+; 352 |              param0,                                                   
+; 353 |              param1,                                                   
+; 354 |              param2,                                                   
+; 355 |              param3,                                                   
+; 356 |              param4,                                                   
+; 357 |                                          param5);                      
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #40]         ; [DPU_3_PIPE] |351| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |351| 
+        LDR       A1, [SP, #44]         ; [DPU_3_PIPE] |351| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |351| 
+        LDR       A1, [SP, #48]         ; [DPU_3_PIPE] |351| 
+        STR       A1, [SP, #8]          ; [DPU_3_PIPE] |351| 
+        LDR       A4, [SP, #36]         ; [DPU_3_PIPE] |351| 
+        LDR       A3, [SP, #32]         ; [DPU_3_PIPE] |351| 
+        LDR       A2, [SP, #24]         ; [DPU_3_PIPE] |351| 
+        LDR       A1, [SP, #20]         ; [DPU_3_PIPE] |351| 
+$C$DW$103	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$103, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$103, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$103, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |351| 
+        ; CALL OCCURS {Osal_printf }     ; [] |351| 
+	.dwpsn	file "../../common/Trace.c",line 361,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L21||:    
+        ADD       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$104	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$104, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$104, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$88, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$88, DW_AT_TI_end_line(0x169)
+	.dwattr $C$DW$88, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$88
+
+	.sect	".text:_GT_setFailureReason"
+	.clink
+	.thumbfunc _GT_setFailureReason
+	.thumb
+	.global	_GT_setFailureReason
+
+$C$DW$105	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_setFailureReason")
+	.dwattr $C$DW$105, DW_AT_low_pc(_GT_setFailureReason)
+	.dwattr $C$DW$105, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$105, DW_AT_TI_symbol_name("_GT_setFailureReason")
+	.dwattr $C$DW$105, DW_AT_external
+	.dwattr $C$DW$105, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$105, DW_AT_TI_begin_line(0x178)
+	.dwattr $C$DW$105, DW_AT_TI_begin_column(0x06)
+	.dwattr $C$DW$105, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$105, DW_AT_decl_line(0x178)
+	.dwattr $C$DW$105, DW_AT_decl_column(0x06)
+	.dwattr $C$DW$105, DW_AT_TI_max_frame_size(0x20)
+	.dwpsn	file "../../common/Trace.c",line 382,column 1,is_stmt,address _GT_setFailureReason,isa 1
+
+	.dwfde $C$DW$CIE, _GT_setFailureReason
+$C$DW$106	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$106, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$106, DW_AT_type(*$C$DW$T$68)
+	.dwattr $C$DW$106, DW_AT_location[DW_OP_reg0]
+$C$DW$107	.dwtag  DW_TAG_formal_parameter, DW_AT_name("func")
+	.dwattr $C$DW$107, DW_AT_TI_symbol_name("func")
+	.dwattr $C$DW$107, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$107, DW_AT_location[DW_OP_reg1]
+$C$DW$108	.dwtag  DW_TAG_formal_parameter, DW_AT_name("fileName")
+	.dwattr $C$DW$108, DW_AT_TI_symbol_name("fileName")
+	.dwattr $C$DW$108, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$108, DW_AT_location[DW_OP_reg2]
+$C$DW$109	.dwtag  DW_TAG_formal_parameter, DW_AT_name("lineNo")
+	.dwattr $C$DW$109, DW_AT_TI_symbol_name("lineNo")
+	.dwattr $C$DW$109, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$109, DW_AT_location[DW_OP_reg3]
+$C$DW$110	.dwtag  DW_TAG_formal_parameter, DW_AT_name("status")
+	.dwattr $C$DW$110, DW_AT_TI_symbol_name("status")
+	.dwattr $C$DW$110, DW_AT_type(*$C$DW$T$34)
+	.dwattr $C$DW$110, DW_AT_location[DW_OP_breg13 32]
+$C$DW$111	.dwtag  DW_TAG_formal_parameter, DW_AT_name("msg")
+	.dwattr $C$DW$111, DW_AT_TI_symbol_name("msg")
+	.dwattr $C$DW$111, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$111, DW_AT_location[DW_OP_breg13 36]
+;----------------------------------------------------------------------
+; 376 | Void _GT_setFailureReason (Int    mask,                                
+; 377 | Char * func,                                                           
+; 378 | Char * fileName,                                                       
+; 379 | UInt32 lineNo,                                                         
+; 380 | Int32 status,                                                          
+; 381 | Char * msg)                                                            
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_setFailureReason                                       *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 8 Args + 16 Auto + 4 Save = 28 byte                 *
+;*****************************************************************************
+_GT_setFailureReason:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 32
+$C$DW$112	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$112, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$112, DW_AT_type(*$C$DW$T$68)
+	.dwattr $C$DW$112, DW_AT_location[DW_OP_breg13 8]
+$C$DW$113	.dwtag  DW_TAG_variable, DW_AT_name("func")
+	.dwattr $C$DW$113, DW_AT_TI_symbol_name("func")
+	.dwattr $C$DW$113, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$113, DW_AT_location[DW_OP_breg13 12]
+$C$DW$114	.dwtag  DW_TAG_variable, DW_AT_name("fileName")
+	.dwattr $C$DW$114, DW_AT_TI_symbol_name("fileName")
+	.dwattr $C$DW$114, DW_AT_type(*$C$DW$T$58)
+	.dwattr $C$DW$114, DW_AT_location[DW_OP_breg13 16]
+$C$DW$115	.dwtag  DW_TAG_variable, DW_AT_name("lineNo")
+	.dwattr $C$DW$115, DW_AT_TI_symbol_name("lineNo")
+	.dwattr $C$DW$115, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$115, DW_AT_location[DW_OP_breg13 20]
+        STR       A4, [SP, #20]         ; [DPU_3_PIPE] |382| 
+        STR       A3, [SP, #16]         ; [DPU_3_PIPE] |382| 
+        STR       A2, [SP, #12]         ; [DPU_3_PIPE] |382| 
+        STR       A1, [SP, #8]          ; [DPU_3_PIPE] |382| 
+	.dwpsn	file "../../common/Trace.c",line 383,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 383 | if (    ((mask & GT_TRACESETFAILURE_MASK) >> GT_TRACESETFAILURE_SHIFT) 
+; 384 |     ==  GT_TraceState_Enable) {                                        
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #8]          ; [DPU_3_PIPE] |383| 
+        AND       A1, A1, #3840         ; [DPU_3_PIPE] |383| 
+        ASRS      A1, A1, #8            ; [DPU_3_PIPE] |383| 
+        CMP       A1, #1                ; [DPU_3_PIPE] |383| 
+        BNE       ||$C$L22||            ; [DPU_3_PIPE] |383| 
+        ; BRANCHCC OCCURS {||$C$L22||}   ; [] |383| 
+;* --------------------------------------------------------------------------*
+	.dwpsn	file "../../common/Trace.c",line 385,column 9,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 385 | Osal_printf ("*** %s: %s\tError [0x%x] at Line no: %d in file %s\n",   
+; 386 |              func,                                                     
+; 387 |              msg,                                                      
+; 388 |              status,                                                   
+; 389 |              lineNo,                                                   
+; 390 |              fileName);                                                
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #20]         ; [DPU_3_PIPE] |385| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |385| 
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |385| 
+        LDR       A3, [SP, #36]         ; [DPU_3_PIPE] |385| 
+        STR       A1, [SP, #4]          ; [DPU_3_PIPE] |385| 
+        LDR       A4, [SP, #32]         ; [DPU_3_PIPE] |385| 
+        LDR       A2, [SP, #12]         ; [DPU_3_PIPE] |385| 
+        ADR       A1, $C$SL1            ; [DPU_3_PIPE] |385| 
+$C$DW$116	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$116, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$116, DW_AT_name("Osal_printf")
+	.dwattr $C$DW$116, DW_AT_TI_call
+        BL        Osal_printf           ; [DPU_3_PIPE] |385| 
+        ; CALL OCCURS {Osal_printf }     ; [] |385| 
+	.dwpsn	file "../../common/Trace.c",line 392,column 1,is_stmt,isa 1
+;* --------------------------------------------------------------------------*
+||$C$L22||:    
+        ADD       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$117	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$117, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$117, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$105, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$105, DW_AT_TI_end_line(0x188)
+	.dwattr $C$DW$105, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$105
+
+	.sect	".text:_GT_setTrace"
+	.clink
+	.thumbfunc _GT_setTrace
+	.thumb
+	.global	_GT_setTrace
+
+$C$DW$118	.dwtag  DW_TAG_subprogram, DW_AT_name("_GT_setTrace")
+	.dwattr $C$DW$118, DW_AT_low_pc(_GT_setTrace)
+	.dwattr $C$DW$118, DW_AT_high_pc(0x00)
+	.dwattr $C$DW$118, DW_AT_TI_symbol_name("_GT_setTrace")
+	.dwattr $C$DW$118, DW_AT_external
+	.dwattr $C$DW$118, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$118, DW_AT_TI_begin_file("../../common/Trace.c")
+	.dwattr $C$DW$118, DW_AT_TI_begin_line(0x191)
+	.dwattr $C$DW$118, DW_AT_TI_begin_column(0x08)
+	.dwattr $C$DW$118, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$118, DW_AT_decl_line(0x191)
+	.dwattr $C$DW$118, DW_AT_decl_column(0x08)
+	.dwattr $C$DW$118, DW_AT_TI_max_frame_size(0x20)
+	.dwpsn	file "../../common/Trace.c",line 402,column 1,is_stmt,address _GT_setTrace,isa 1
+
+	.dwfde $C$DW$CIE, _GT_setTrace
+$C$DW$119	.dwtag  DW_TAG_formal_parameter, DW_AT_name("mask")
+	.dwattr $C$DW$119, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$119, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$119, DW_AT_location[DW_OP_reg0]
+$C$DW$120	.dwtag  DW_TAG_formal_parameter, DW_AT_name("type")
+	.dwattr $C$DW$120, DW_AT_TI_symbol_name("type")
+	.dwattr $C$DW$120, DW_AT_type(*$C$DW$T$24)
+	.dwattr $C$DW$120, DW_AT_location[DW_OP_reg1]
+;----------------------------------------------------------------------
+; 401 | UInt32 _GT_setTrace (UInt32 mask, GT_TraceType type)                   
+;----------------------------------------------------------------------
+
+;*****************************************************************************
+;* FUNCTION NAME: _GT_setTrace                                               *
+;*                                                                           *
+;*   Regs Modified     : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Regs Used         : A1,A2,A3,A4,V9,SP,LR,SR                             *
+;*   Local Frame Size  : 0 Args + 24 Auto + 4 Save = 28 byte                 *
+;*****************************************************************************
+_GT_setTrace:
+;* --------------------------------------------------------------------------*
+	.dwcfi	cfa_offset, 0
+        PUSH      {LR}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+	.dwcfi	save_reg_to_mem, 14, -4
+        SUB       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 32
+$C$DW$121	.dwtag  DW_TAG_variable, DW_AT_name("mask")
+	.dwattr $C$DW$121, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$121, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$121, DW_AT_location[DW_OP_breg13 0]
+$C$DW$122	.dwtag  DW_TAG_variable, DW_AT_name("type")
+	.dwattr $C$DW$122, DW_AT_TI_symbol_name("type")
+	.dwattr $C$DW$122, DW_AT_type(*$C$DW$T$24)
+	.dwattr $C$DW$122, DW_AT_location[DW_OP_breg13 4]
+$C$DW$123	.dwtag  DW_TAG_variable, DW_AT_name("cmdArgs")
+	.dwattr $C$DW$123, DW_AT_TI_symbol_name("cmdArgs")
+	.dwattr $C$DW$123, DW_AT_type(*$C$DW$T$46)
+	.dwattr $C$DW$123, DW_AT_location[DW_OP_breg13 8]
+;----------------------------------------------------------------------
+; 403 | TraceDrv_CmdArgs cmdArgs;                                              
+;----------------------------------------------------------------------
+        STRB      A2, [SP, #4]          ; [DPU_3_PIPE] |402| 
+        STR       A1, [SP, #0]          ; [DPU_3_PIPE] |402| 
+	.dwpsn	file "../../common/Trace.c",line 405,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 405 | GT_1trace(curTrace, GT_2CLASS, "Setting Trace to: [0x%x]\n", mask);    
+;----------------------------------------------------------------------
+        LDR       A1, $C$CON1           ; [DPU_3_PIPE] |405| 
+        LDR       A4, [SP, #0]          ; [DPU_3_PIPE] |405| 
+        LDR       A1, [A1, #0]          ; [DPU_3_PIPE] |405| 
+        ADR       A3, $C$SL4            ; [DPU_3_PIPE] |405| 
+        MOV       A2, #131072           ; [DPU_3_PIPE] |405| 
+$C$DW$124	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$124, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$124, DW_AT_name("_GT_1trace")
+	.dwattr $C$DW$124, DW_AT_TI_call
+        BL        _GT_1trace            ; [DPU_3_PIPE] |405| 
+        ; CALL OCCURS {_GT_1trace }      ; [] |405| 
+	.dwpsn	file "../../common/Trace.c",line 407,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 407 | cmdArgs.args.setTrace.mask = mask;                                     
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #0]          ; [DPU_3_PIPE] |407| 
+        STR       A1, [SP, #12]         ; [DPU_3_PIPE] |407| 
+	.dwpsn	file "../../common/Trace.c",line 408,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 408 | cmdArgs.args.setTrace.type = type;                                     
+;----------------------------------------------------------------------
+        LDRB      A1, [SP, #4]          ; [DPU_3_PIPE] |408| 
+        STRB      A1, [SP, #20]         ; [DPU_3_PIPE] |408| 
+	.dwpsn	file "../../common/Trace.c",line 409,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 409 | TraceDrv_ioctl(CMD_TRACEDRV_SETTRACE, &cmdArgs);                       
+;----------------------------------------------------------------------
+        MOVS      A1, #151              ; [DPU_3_PIPE] |409| 
+        ADD       A2, SP, #8            ; [DPU_3_PIPE] |409| 
+$C$DW$125	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$125, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$125, DW_AT_name("TraceDrv_ioctl")
+	.dwattr $C$DW$125, DW_AT_TI_call
+        BL        TraceDrv_ioctl        ; [DPU_3_PIPE] |409| 
+        ; CALL OCCURS {TraceDrv_ioctl }  ; [] |409| 
+	.dwpsn	file "../../common/Trace.c",line 411,column 5,is_stmt,isa 1
+;----------------------------------------------------------------------
+; 411 | return (cmdArgs.args.setTrace.oldMask);                                
+;----------------------------------------------------------------------
+        LDR       A1, [SP, #16]         ; [DPU_3_PIPE] |411| 
+	.dwpsn	file "../../common/Trace.c",line 412,column 1,is_stmt,isa 1
+        ADD       SP, SP, #28           ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 4
+$C$DW$126	.dwtag  DW_TAG_TI_branch
+	.dwattr $C$DW$126, DW_AT_low_pc(0x00)
+	.dwattr $C$DW$126, DW_AT_TI_return
+        POP       {PC}                  ; [DPU_3_PIPE] 
+	.dwcfi	cfa_offset, 0
+        ; BRANCH OCCURS                  ; [] 
+	.dwattr $C$DW$118, DW_AT_TI_end_file("../../common/Trace.c")
+	.dwattr $C$DW$118, DW_AT_TI_end_line(0x19c)
+	.dwattr $C$DW$118, DW_AT_TI_end_column(0x01)
+	.dwendentry
+	.dwendtag $C$DW$118
+
+;******************************************************************************
+;* STRINGS                                                                    *
+;******************************************************************************
+	.sect	".text:_GT_setFailureReason"
+	.align	4
+||$C$SL1||:	.string	"*** %s: %s",9,"Error [0x%x] at Line no: %d in file %s",10,0
+;******************************************************************************
+;* STRINGS                                                                    *
+;******************************************************************************
+	.sect	".text:_GT_setTrace"
+	.align	4
+||$C$SL4||:	.string	"Setting Trace to: [0x%x]",10,10,0
+;******************************************************************************
+;* CONSTANT TABLE                                                             *
+;******************************************************************************
+	.sect	".text:_GT_setTrace"
+	.align	4
+||$C$CON1||:	.bits	curTrace,32
+;*****************************************************************************
+;* UNDEFINED EXTERNAL REFERENCES                                             *
+;*****************************************************************************
+	.global	Osal_printf
+	.global	TraceDrv_ioctl
+
+;******************************************************************************
+;* BUILD ATTRIBUTES                                                           *
+;******************************************************************************
+	.battr "aeabi", Tag_File, 1, Tag_ABI_PCS_wchar_t(2)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_FP_rounding(0)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_FP_denormal(0)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_FP_exceptions(0)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_FP_number_model(1)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_enum_size(1)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_optimization_goals(5)
+	.battr "aeabi", Tag_File, 1, Tag_ABI_FP_optimization_goals(0)
+	.battr "TI", Tag_File, 1, Tag_Bitfield_layout(2)
+	.battr "TI", Tag_File, 1, Tag_FP_interface(1)
+
+;******************************************************************************
+;* TYPE INFORMATION                                                           *
+;******************************************************************************
+
+$C$DW$T$23	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$23, DW_AT_byte_size(0x01)
+$C$DW$127	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceType_User"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$127, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$127, DW_AT_decl_line(0xb3)
+	.dwattr $C$DW$127, DW_AT_decl_column(0x05)
+$C$DW$128	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceType_Kernel"), DW_AT_const_value(0x01)
+	.dwattr $C$DW$128, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$128, DW_AT_decl_line(0xb5)
+	.dwattr $C$DW$128, DW_AT_decl_column(0x05)
+$C$DW$129	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceType_EndValue"), DW_AT_const_value(0x03)
+	.dwattr $C$DW$129, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$129, DW_AT_decl_line(0xb7)
+	.dwattr $C$DW$129, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$23
+
+	.dwattr $C$DW$T$23, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$23, DW_AT_decl_line(0xb2)
+	.dwattr $C$DW$T$23, DW_AT_decl_column(0x0e)
+$C$DW$T$24	.dwtag  DW_TAG_typedef, DW_AT_name("GT_TraceType")
+	.dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$23)
+	.dwattr $C$DW$T$24, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$24, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$24, DW_AT_decl_line(0xb9)
+	.dwattr $C$DW$T$24, DW_AT_decl_column(0x03)
+
+$C$DW$T$37	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$37, DW_AT_byte_size(0x04)
+$C$DW$130	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_1CLASS"), DW_AT_const_value(0x10000)
+	.dwattr $C$DW$130, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$130, DW_AT_decl_line(0xa1)
+	.dwattr $C$DW$130, DW_AT_decl_column(0x05)
+$C$DW$131	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_2CLASS"), DW_AT_const_value(0x20000)
+	.dwattr $C$DW$131, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$131, DW_AT_decl_line(0xa3)
+	.dwattr $C$DW$131, DW_AT_decl_column(0x05)
+$C$DW$132	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_3CLASS"), DW_AT_const_value(0x30000)
+	.dwattr $C$DW$132, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$132, DW_AT_decl_line(0xa5)
+	.dwattr $C$DW$132, DW_AT_decl_column(0x05)
+$C$DW$133	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_4CLASS"), DW_AT_const_value(0x40000)
+	.dwattr $C$DW$133, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$133, DW_AT_decl_line(0xa7)
+	.dwattr $C$DW$133, DW_AT_decl_column(0x05)
+$C$DW$134	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_ENTER"), DW_AT_const_value(0x50000)
+	.dwattr $C$DW$134, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$134, DW_AT_decl_line(0xa9)
+	.dwattr $C$DW$134, DW_AT_decl_column(0x05)
+$C$DW$135	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_LEAVE"), DW_AT_const_value(0x60000)
+	.dwattr $C$DW$135, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$135, DW_AT_decl_line(0xab)
+	.dwattr $C$DW$135, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$37
+
+	.dwattr $C$DW$T$37, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$37, DW_AT_decl_line(0xa0)
+	.dwattr $C$DW$T$37, DW_AT_decl_column(0x0e)
+$C$DW$T$38	.dwtag  DW_TAG_typedef, DW_AT_name("GT_TraceClass")
+	.dwattr $C$DW$T$38, DW_AT_type(*$C$DW$T$37)
+	.dwattr $C$DW$T$38, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$38, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$38, DW_AT_decl_line(0xad)
+	.dwattr $C$DW$T$38, DW_AT_decl_column(0x03)
+
+$C$DW$T$39	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$39, DW_AT_byte_size(0x01)
+$C$DW$136	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceState_Disable"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$136, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$136, DW_AT_decl_line(0x7d)
+	.dwattr $C$DW$136, DW_AT_decl_column(0x05)
+$C$DW$137	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceState_Enable"), DW_AT_const_value(0x01)
+	.dwattr $C$DW$137, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$137, DW_AT_decl_line(0x7f)
+	.dwattr $C$DW$137, DW_AT_decl_column(0x05)
+$C$DW$138	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceState_EndValue"), DW_AT_const_value(0x02)
+	.dwattr $C$DW$138, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$138, DW_AT_decl_line(0x81)
+	.dwattr $C$DW$138, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$39
+
+	.dwattr $C$DW$T$39, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$39, DW_AT_decl_line(0x7c)
+	.dwattr $C$DW$T$39, DW_AT_decl_column(0x0e)
+$C$DW$T$40	.dwtag  DW_TAG_typedef, DW_AT_name("GT_TraceState")
+	.dwattr $C$DW$T$40, DW_AT_type(*$C$DW$T$39)
+	.dwattr $C$DW$T$40, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$40, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$40, DW_AT_decl_line(0x83)
+	.dwattr $C$DW$T$40, DW_AT_decl_column(0x03)
+
+$C$DW$T$41	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$41, DW_AT_byte_size(0x01)
+$C$DW$139	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceEnter_Disable"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$139, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$139, DW_AT_decl_line(0x89)
+	.dwattr $C$DW$139, DW_AT_decl_column(0x05)
+$C$DW$140	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceEnter_Enable"), DW_AT_const_value(0x10)
+	.dwattr $C$DW$140, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$140, DW_AT_decl_line(0x8b)
+	.dwattr $C$DW$140, DW_AT_decl_column(0x05)
+$C$DW$141	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceEnter_EndValue"), DW_AT_const_value(0x20)
+	.dwattr $C$DW$141, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$141, DW_AT_decl_line(0x8d)
+	.dwattr $C$DW$141, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$41
+
+	.dwattr $C$DW$T$41, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$41, DW_AT_decl_line(0x88)
+	.dwattr $C$DW$T$41, DW_AT_decl_column(0x0e)
+$C$DW$T$42	.dwtag  DW_TAG_typedef, DW_AT_name("GT_TraceEnter")
+	.dwattr $C$DW$T$42, DW_AT_type(*$C$DW$T$41)
+	.dwattr $C$DW$T$42, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$42, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$42, DW_AT_decl_line(0x8f)
+	.dwattr $C$DW$T$42, DW_AT_decl_column(0x03)
+
+$C$DW$T$43	.dwtag  DW_TAG_enumeration_type
+	.dwattr $C$DW$T$43, DW_AT_byte_size(0x02)
+$C$DW$142	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceSetFailure_Disable"), DW_AT_const_value(0x00)
+	.dwattr $C$DW$142, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$142, DW_AT_decl_line(0x95)
+	.dwattr $C$DW$142, DW_AT_decl_column(0x05)
+$C$DW$143	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceSetFailure_Enable"), DW_AT_const_value(0x100)
+	.dwattr $C$DW$143, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$143, DW_AT_decl_line(0x97)
+	.dwattr $C$DW$143, DW_AT_decl_column(0x05)
+$C$DW$144	.dwtag  DW_TAG_enumerator, DW_AT_name("GT_TraceSetFailure_EndValue"), DW_AT_const_value(0x200)
+	.dwattr $C$DW$144, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$144, DW_AT_decl_line(0x99)
+	.dwattr $C$DW$144, DW_AT_decl_column(0x05)
+	.dwendtag $C$DW$T$43
+
+	.dwattr $C$DW$T$43, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$43, DW_AT_decl_line(0x94)
+	.dwattr $C$DW$T$43, DW_AT_decl_column(0x0e)
+$C$DW$T$44	.dwtag  DW_TAG_typedef, DW_AT_name("GT_TraceSetFailure")
+	.dwattr $C$DW$T$44, DW_AT_type(*$C$DW$T$43)
+	.dwattr $C$DW$T$44, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$44, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h")
+	.dwattr $C$DW$T$44, DW_AT_decl_line(0x9b)
+	.dwattr $C$DW$T$44, DW_AT_decl_column(0x03)
+
+$C$DW$T$25	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$25, DW_AT_byte_size(0x0c)
+$C$DW$145	.dwtag  DW_TAG_member
+	.dwattr $C$DW$145, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$145, DW_AT_name("mask")
+	.dwattr $C$DW$145, DW_AT_TI_symbol_name("mask")
+	.dwattr $C$DW$145, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$145, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$145, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$145, DW_AT_decl_line(0x61)
+	.dwattr $C$DW$145, DW_AT_decl_column(0x23)
+$C$DW$146	.dwtag  DW_TAG_member
+	.dwattr $C$DW$146, DW_AT_type(*$C$DW$T$22)
+	.dwattr $C$DW$146, DW_AT_name("oldMask")
+	.dwattr $C$DW$146, DW_AT_TI_symbol_name("oldMask")
+	.dwattr $C$DW$146, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$146, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$146, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$146, DW_AT_decl_line(0x62)
+	.dwattr $C$DW$146, DW_AT_decl_column(0x23)
+$C$DW$147	.dwtag  DW_TAG_member
+	.dwattr $C$DW$147, DW_AT_type(*$C$DW$T$24)
+	.dwattr $C$DW$147, DW_AT_name("type")
+	.dwattr $C$DW$147, DW_AT_TI_symbol_name("type")
+	.dwattr $C$DW$147, DW_AT_data_member_location[DW_OP_plus_uconst 0x8]
+	.dwattr $C$DW$147, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$147, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$147, DW_AT_decl_line(0x63)
+	.dwattr $C$DW$147, DW_AT_decl_column(0x23)
+	.dwendtag $C$DW$T$25
+
+	.dwattr $C$DW$T$25, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$T$25, DW_AT_decl_line(0x60)
+	.dwattr $C$DW$T$25, DW_AT_decl_column(0x10)
+
+$C$DW$T$26	.dwtag  DW_TAG_union_type
+	.dwattr $C$DW$T$26, DW_AT_byte_size(0x0c)
+$C$DW$148	.dwtag  DW_TAG_member
+	.dwattr $C$DW$148, DW_AT_type(*$C$DW$T$25)
+	.dwattr $C$DW$148, DW_AT_name("setTrace")
+	.dwattr $C$DW$148, DW_AT_TI_symbol_name("setTrace")
+	.dwattr $C$DW$148, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$148, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$148, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$148, DW_AT_decl_line(0x64)
+	.dwattr $C$DW$148, DW_AT_decl_column(0x0b)
+	.dwendtag $C$DW$T$26
+
+	.dwattr $C$DW$T$26, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$T$26, DW_AT_decl_line(0x5f)
+	.dwattr $C$DW$T$26, DW_AT_decl_column(0x0b)
+
+$C$DW$T$30	.dwtag  DW_TAG_union_type
+	.dwattr $C$DW$T$30, DW_AT_byte_size(0x04)
+$C$DW$149	.dwtag  DW_TAG_member
+	.dwattr $C$DW$149, DW_AT_type(*$C$DW$T$27)
+	.dwattr $C$DW$149, DW_AT_name("f")
+	.dwattr $C$DW$149, DW_AT_TI_symbol_name("f")
+	.dwattr $C$DW$149, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$149, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$149, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$149, DW_AT_decl_line(0xac)
+	.dwattr $C$DW$149, DW_AT_decl_column(0x0f)
+$C$DW$150	.dwtag  DW_TAG_member
+	.dwattr $C$DW$150, DW_AT_type(*$C$DW$T$29)
+	.dwattr $C$DW$150, DW_AT_name("a")
+	.dwattr $C$DW$150, DW_AT_TI_symbol_name("a")
+	.dwattr $C$DW$150, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$150, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$150, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$150, DW_AT_decl_line(0xad)
+	.dwattr $C$DW$150, DW_AT_decl_column(0x0f)
+	.dwendtag $C$DW$T$30
+
+	.dwattr $C$DW$T$30, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$30, DW_AT_decl_line(0xab)
+	.dwattr $C$DW$T$30, DW_AT_decl_column(0x0f)
+$C$DW$T$45	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_FloatData")
+	.dwattr $C$DW$T$45, DW_AT_type(*$C$DW$T$30)
+	.dwattr $C$DW$T$45, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$45, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$45, DW_AT_decl_line(0xae)
+	.dwattr $C$DW$T$45, DW_AT_decl_column(0x03)
+
+$C$DW$T$35	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$35, DW_AT_name("TraceDrv_CmdArgs_tag")
+	.dwattr $C$DW$T$35, DW_AT_byte_size(0x10)
+$C$DW$151	.dwtag  DW_TAG_member
+	.dwattr $C$DW$151, DW_AT_type(*$C$DW$T$34)
+	.dwattr $C$DW$151, DW_AT_name("apiStatus")
+	.dwattr $C$DW$151, DW_AT_TI_symbol_name("apiStatus")
+	.dwattr $C$DW$151, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$151, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$151, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$151, DW_AT_decl_line(0x5d)
+	.dwattr $C$DW$151, DW_AT_decl_column(0x0b)
+$C$DW$152	.dwtag  DW_TAG_member
+	.dwattr $C$DW$152, DW_AT_type(*$C$DW$T$26)
+	.dwattr $C$DW$152, DW_AT_name("args")
+	.dwattr $C$DW$152, DW_AT_TI_symbol_name("args")
+	.dwattr $C$DW$152, DW_AT_data_member_location[DW_OP_plus_uconst 0x4]
+	.dwattr $C$DW$152, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$152, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$152, DW_AT_decl_line(0x65)
+	.dwattr $C$DW$152, DW_AT_decl_column(0x07)
+	.dwendtag $C$DW$T$35
+
+	.dwattr $C$DW$T$35, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$T$35, DW_AT_decl_line(0x5c)
+	.dwattr $C$DW$T$35, DW_AT_decl_column(0x10)
+$C$DW$T$46	.dwtag  DW_TAG_typedef, DW_AT_name("TraceDrv_CmdArgs")
+	.dwattr $C$DW$T$46, DW_AT_type(*$C$DW$T$35)
+	.dwattr $C$DW$T$46, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$46, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h")
+	.dwattr $C$DW$T$46, DW_AT_decl_line(0x66)
+	.dwattr $C$DW$T$46, DW_AT_decl_column(0x03)
+$C$DW$T$2	.dwtag  DW_TAG_unspecified_type
+	.dwattr $C$DW$T$2, DW_AT_name("void")
+$C$DW$T$3	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$3, DW_AT_type(*$C$DW$T$2)
+	.dwattr $C$DW$T$3, DW_AT_address_class(0x20)
+$C$DW$T$48	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Ptr")
+	.dwattr $C$DW$T$48, DW_AT_type(*$C$DW$T$3)
+	.dwattr $C$DW$T$48, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$48, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$48, DW_AT_decl_line(0x2e)
+	.dwattr $C$DW$T$48, DW_AT_decl_column(0x1a)
+$C$DW$T$49	.dwtag  DW_TAG_typedef, DW_AT_name("Ptr")
+	.dwattr $C$DW$T$49, DW_AT_type(*$C$DW$T$48)
+	.dwattr $C$DW$T$49, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$49, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$49, DW_AT_decl_line(0xea)
+	.dwattr $C$DW$T$49, DW_AT_decl_column(0x19)
+$C$DW$T$70	.dwtag  DW_TAG_const_type
+	.dwattr $C$DW$T$70, DW_AT_type(*$C$DW$T$2)
+$C$DW$T$71	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$71, DW_AT_type(*$C$DW$T$70)
+	.dwattr $C$DW$T$71, DW_AT_address_class(0x20)
+$C$DW$T$72	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_CPtr")
+	.dwattr $C$DW$T$72, DW_AT_type(*$C$DW$T$71)
+	.dwattr $C$DW$T$72, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$72, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$72, DW_AT_decl_line(0x2f)
+	.dwattr $C$DW$T$72, DW_AT_decl_column(0x1a)
+$C$DW$T$4	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+	.dwattr $C$DW$T$4, DW_AT_name("bool")
+	.dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+$C$DW$T$5	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+	.dwattr $C$DW$T$5, DW_AT_name("signed char")
+	.dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+$C$DW$T$73	.dwtag  DW_TAG_typedef, DW_AT_name("int8_t")
+	.dwattr $C$DW$T$73, DW_AT_type(*$C$DW$T$5)
+	.dwattr $C$DW$T$73, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$73, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$73, DW_AT_decl_line(0x2a)
+	.dwattr $C$DW$T$73, DW_AT_decl_column(0x1d)
+$C$DW$T$74	.dwtag  DW_TAG_typedef, DW_AT_name("int_least8_t")
+	.dwattr $C$DW$T$74, DW_AT_type(*$C$DW$T$73)
+	.dwattr $C$DW$T$74, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$74, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$74, DW_AT_decl_line(0x37)
+	.dwattr $C$DW$T$74, DW_AT_decl_column(0x17)
+$C$DW$T$75	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Int8")
+	.dwattr $C$DW$T$75, DW_AT_type(*$C$DW$T$74)
+	.dwattr $C$DW$T$75, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$75, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$75, DW_AT_decl_line(0x59)
+	.dwattr $C$DW$T$75, DW_AT_decl_column(0x19)
+$C$DW$T$76	.dwtag  DW_TAG_typedef, DW_AT_name("Int8")
+	.dwattr $C$DW$T$76, DW_AT_type(*$C$DW$T$75)
+	.dwattr $C$DW$T$76, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$76, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$76, DW_AT_decl_line(0xe6)
+	.dwattr $C$DW$T$76, DW_AT_decl_column(0x19)
+$C$DW$T$6	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+	.dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+	.dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+$C$DW$T$77	.dwtag  DW_TAG_typedef, DW_AT_name("uint8_t")
+	.dwattr $C$DW$T$77, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$77, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$77, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$77, DW_AT_decl_line(0x2b)
+	.dwattr $C$DW$T$77, DW_AT_decl_column(0x1c)
+$C$DW$T$78	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least8_t")
+	.dwattr $C$DW$T$78, DW_AT_type(*$C$DW$T$77)
+	.dwattr $C$DW$T$78, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$78, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$78, DW_AT_decl_line(0x38)
+	.dwattr $C$DW$T$78, DW_AT_decl_column(0x16)
+$C$DW$T$79	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UInt8")
+	.dwattr $C$DW$T$79, DW_AT_type(*$C$DW$T$78)
+	.dwattr $C$DW$T$79, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$79, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$79, DW_AT_decl_line(0x5a)
+	.dwattr $C$DW$T$79, DW_AT_decl_column(0x19)
+$C$DW$T$80	.dwtag  DW_TAG_typedef, DW_AT_name("UInt8")
+	.dwattr $C$DW$T$80, DW_AT_type(*$C$DW$T$79)
+	.dwattr $C$DW$T$80, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$80, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$80, DW_AT_decl_line(0xee)
+	.dwattr $C$DW$T$80, DW_AT_decl_column(0x19)
+$C$DW$T$81	.dwtag  DW_TAG_typedef, DW_AT_name("Uint8")
+	.dwattr $C$DW$T$81, DW_AT_type(*$C$DW$T$79)
+	.dwattr $C$DW$T$81, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$81, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$81, DW_AT_decl_line(0xfb)
+	.dwattr $C$DW$T$81, DW_AT_decl_column(0x19)
+$C$DW$T$82	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Bits8")
+	.dwattr $C$DW$T$82, DW_AT_type(*$C$DW$T$77)
+	.dwattr $C$DW$T$82, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$82, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$82, DW_AT_decl_line(0x76)
+	.dwattr $C$DW$T$82, DW_AT_decl_column(0x19)
+$C$DW$T$83	.dwtag  DW_TAG_typedef, DW_AT_name("Bits8")
+	.dwattr $C$DW$T$83, DW_AT_type(*$C$DW$T$82)
+	.dwattr $C$DW$T$83, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$83, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$83, DW_AT_decl_line(0x10f)
+	.dwattr $C$DW$T$83, DW_AT_decl_column(0x19)
+$C$DW$T$84	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UChar")
+	.dwattr $C$DW$T$84, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$84, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$84, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$84, DW_AT_decl_line(0x1e)
+	.dwattr $C$DW$T$84, DW_AT_decl_column(0x19)
+$C$DW$T$85	.dwtag  DW_TAG_typedef, DW_AT_name("UChar")
+	.dwattr $C$DW$T$85, DW_AT_type(*$C$DW$T$84)
+	.dwattr $C$DW$T$85, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$85, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$85, DW_AT_decl_line(0xd4)
+	.dwattr $C$DW$T$85, DW_AT_decl_column(0x19)
+$C$DW$T$7	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+	.dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+	.dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+$C$DW$T$8	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$8, DW_AT_name("short")
+	.dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+$C$DW$T$86	.dwtag  DW_TAG_typedef, DW_AT_name("int16_t")
+	.dwattr $C$DW$T$86, DW_AT_type(*$C$DW$T$8)
+	.dwattr $C$DW$T$86, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$86, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$86, DW_AT_decl_line(0x2c)
+	.dwattr $C$DW$T$86, DW_AT_decl_column(0x1d)
+$C$DW$T$87	.dwtag  DW_TAG_typedef, DW_AT_name("int_least16_t")
+	.dwattr $C$DW$T$87, DW_AT_type(*$C$DW$T$86)
+	.dwattr $C$DW$T$87, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$87, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$87, DW_AT_decl_line(0x3a)
+	.dwattr $C$DW$T$87, DW_AT_decl_column(0x17)
+$C$DW$T$88	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Int16")
+	.dwattr $C$DW$T$88, DW_AT_type(*$C$DW$T$87)
+	.dwattr $C$DW$T$88, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$88, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$88, DW_AT_decl_line(0x5b)
+	.dwattr $C$DW$T$88, DW_AT_decl_column(0x19)
+$C$DW$T$89	.dwtag  DW_TAG_typedef, DW_AT_name("Int16")
+	.dwattr $C$DW$T$89, DW_AT_type(*$C$DW$T$88)
+	.dwattr $C$DW$T$89, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$89, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$89, DW_AT_decl_line(0xe7)
+	.dwattr $C$DW$T$89, DW_AT_decl_column(0x19)
+$C$DW$T$90	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Short")
+	.dwattr $C$DW$T$90, DW_AT_type(*$C$DW$T$8)
+	.dwattr $C$DW$T$90, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$90, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$90, DW_AT_decl_line(0x1f)
+	.dwattr $C$DW$T$90, DW_AT_decl_column(0x19)
+$C$DW$T$91	.dwtag  DW_TAG_typedef, DW_AT_name("Short")
+	.dwattr $C$DW$T$91, DW_AT_type(*$C$DW$T$90)
+	.dwattr $C$DW$T$91, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$91, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$91, DW_AT_decl_line(0xd5)
+	.dwattr $C$DW$T$91, DW_AT_decl_column(0x19)
+$C$DW$T$9	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+	.dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+$C$DW$T$92	.dwtag  DW_TAG_typedef, DW_AT_name("uint16_t")
+	.dwattr $C$DW$T$92, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$92, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$92, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$92, DW_AT_decl_line(0x2d)
+	.dwattr $C$DW$T$92, DW_AT_decl_column(0x1c)
+$C$DW$T$93	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least16_t")
+	.dwattr $C$DW$T$93, DW_AT_type(*$C$DW$T$92)
+	.dwattr $C$DW$T$93, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$93, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$93, DW_AT_decl_line(0x3b)
+	.dwattr $C$DW$T$93, DW_AT_decl_column(0x16)
+$C$DW$T$94	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UInt16")
+	.dwattr $C$DW$T$94, DW_AT_type(*$C$DW$T$93)
+	.dwattr $C$DW$T$94, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$94, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$94, DW_AT_decl_line(0x5c)
+	.dwattr $C$DW$T$94, DW_AT_decl_column(0x19)
+$C$DW$T$95	.dwtag  DW_TAG_typedef, DW_AT_name("UInt16")
+	.dwattr $C$DW$T$95, DW_AT_type(*$C$DW$T$94)
+	.dwattr $C$DW$T$95, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$95, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$95, DW_AT_decl_line(0xef)
+	.dwattr $C$DW$T$95, DW_AT_decl_column(0x19)
+$C$DW$T$96	.dwtag  DW_TAG_typedef, DW_AT_name("Uint16")
+	.dwattr $C$DW$T$96, DW_AT_type(*$C$DW$T$94)
+	.dwattr $C$DW$T$96, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$96, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$96, DW_AT_decl_line(0xfc)
+	.dwattr $C$DW$T$96, DW_AT_decl_column(0x19)
+$C$DW$T$97	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Bits16")
+	.dwattr $C$DW$T$97, DW_AT_type(*$C$DW$T$92)
+	.dwattr $C$DW$T$97, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$97, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$97, DW_AT_decl_line(0x79)
+	.dwattr $C$DW$T$97, DW_AT_decl_column(0x19)
+$C$DW$T$98	.dwtag  DW_TAG_typedef, DW_AT_name("Bits16")
+	.dwattr $C$DW$T$98, DW_AT_type(*$C$DW$T$97)
+	.dwattr $C$DW$T$98, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$98, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$98, DW_AT_decl_line(0x113)
+	.dwattr $C$DW$T$98, DW_AT_decl_column(0x19)
+$C$DW$T$99	.dwtag  DW_TAG_typedef, DW_AT_name("wchar_t")
+	.dwattr $C$DW$T$99, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$99, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$99, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stddef.h")
+	.dwattr $C$DW$T$99, DW_AT_decl_line(0x3c)
+	.dwattr $C$DW$T$99, DW_AT_decl_column(0x1a)
+$C$DW$T$100	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Bool")
+	.dwattr $C$DW$T$100, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$100, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$100, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$100, DW_AT_decl_line(0x2d)
+	.dwattr $C$DW$T$100, DW_AT_decl_column(0x19)
+$C$DW$T$101	.dwtag  DW_TAG_typedef, DW_AT_name("Bool")
+	.dwattr $C$DW$T$101, DW_AT_type(*$C$DW$T$100)
+	.dwattr $C$DW$T$101, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$101, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$101, DW_AT_decl_line(0xe5)
+	.dwattr $C$DW$T$101, DW_AT_decl_column(0x19)
+$C$DW$T$102	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UShort")
+	.dwattr $C$DW$T$102, DW_AT_type(*$C$DW$T$9)
+	.dwattr $C$DW$T$102, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$102, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$102, DW_AT_decl_line(0x20)
+	.dwattr $C$DW$T$102, DW_AT_decl_column(0x19)
+$C$DW$T$103	.dwtag  DW_TAG_typedef, DW_AT_name("UShort")
+	.dwattr $C$DW$T$103, DW_AT_type(*$C$DW$T$102)
+	.dwattr $C$DW$T$103, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$103, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$103, DW_AT_decl_line(0xd6)
+	.dwattr $C$DW$T$103, DW_AT_decl_column(0x19)
+$C$DW$T$10	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$10, DW_AT_name("int")
+	.dwattr $C$DW$T$10, DW_AT_byte_size(0x04)
+
+$C$DW$T$104	.dwtag  DW_TAG_subroutine_type
+	.dwattr $C$DW$T$104, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$104, DW_AT_language(DW_LANG_C)
+$C$DW$T$105	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$105, DW_AT_type(*$C$DW$T$104)
+	.dwattr $C$DW$T$105, DW_AT_address_class(0x20)
+$C$DW$T$106	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Fxn")
+	.dwattr $C$DW$T$106, DW_AT_type(*$C$DW$T$105)
+	.dwattr $C$DW$T$106, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$106, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$106, DW_AT_decl_line(0x43)
+	.dwattr $C$DW$T$106, DW_AT_decl_column(0x1f)
+$C$DW$T$107	.dwtag  DW_TAG_typedef, DW_AT_name("Fxn")
+	.dwattr $C$DW$T$107, DW_AT_type(*$C$DW$T$106)
+	.dwattr $C$DW$T$107, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$107, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$107, DW_AT_decl_line(0xe9)
+	.dwattr $C$DW$T$107, DW_AT_decl_column(0x19)
+$C$DW$T$31	.dwtag  DW_TAG_typedef, DW_AT_name("int32_t")
+	.dwattr $C$DW$T$31, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$31, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$31, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$31, DW_AT_decl_line(0x2e)
+	.dwattr $C$DW$T$31, DW_AT_decl_column(0x1d)
+$C$DW$T$108	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast16_t")
+	.dwattr $C$DW$T$108, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$108, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$108, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$108, DW_AT_decl_line(0x47)
+	.dwattr $C$DW$T$108, DW_AT_decl_column(0x17)
+$C$DW$T$109	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast32_t")
+	.dwattr $C$DW$T$109, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$109, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$109, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$109, DW_AT_decl_line(0x4a)
+	.dwattr $C$DW$T$109, DW_AT_decl_column(0x17)
+$C$DW$T$110	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast8_t")
+	.dwattr $C$DW$T$110, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$110, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$110, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$110, DW_AT_decl_line(0x45)
+	.dwattr $C$DW$T$110, DW_AT_decl_column(0x17)
+$C$DW$T$32	.dwtag  DW_TAG_typedef, DW_AT_name("int_least32_t")
+	.dwattr $C$DW$T$32, DW_AT_type(*$C$DW$T$31)
+	.dwattr $C$DW$T$32, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$32, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$32, DW_AT_decl_line(0x3c)
+	.dwattr $C$DW$T$32, DW_AT_decl_column(0x17)
+$C$DW$T$33	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Int32")
+	.dwattr $C$DW$T$33, DW_AT_type(*$C$DW$T$32)
+	.dwattr $C$DW$T$33, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$33, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$33, DW_AT_decl_line(0x5d)
+	.dwattr $C$DW$T$33, DW_AT_decl_column(0x19)
+$C$DW$T$34	.dwtag  DW_TAG_typedef, DW_AT_name("Int32")
+	.dwattr $C$DW$T$34, DW_AT_type(*$C$DW$T$33)
+	.dwattr $C$DW$T$34, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$34, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$34, DW_AT_decl_line(0xe8)
+	.dwattr $C$DW$T$34, DW_AT_decl_column(0x19)
+$C$DW$T$28	.dwtag  DW_TAG_typedef, DW_AT_name("intptr_t")
+	.dwattr $C$DW$T$28, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$28, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$28, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$28, DW_AT_decl_line(0x52)
+	.dwattr $C$DW$T$28, DW_AT_decl_column(0x1a)
+$C$DW$T$29	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_IArg")
+	.dwattr $C$DW$T$29, DW_AT_type(*$C$DW$T$28)
+	.dwattr $C$DW$T$29, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$29, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$29, DW_AT_decl_line(0x85)
+	.dwattr $C$DW$T$29, DW_AT_decl_column(0x19)
+$C$DW$T$111	.dwtag  DW_TAG_typedef, DW_AT_name("IArg")
+	.dwattr $C$DW$T$111, DW_AT_type(*$C$DW$T$29)
+	.dwattr $C$DW$T$111, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$111, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$111, DW_AT_decl_line(0xe3)
+	.dwattr $C$DW$T$111, DW_AT_decl_column(0x19)
+$C$DW$T$112	.dwtag  DW_TAG_typedef, DW_AT_name("ptrdiff_t")
+	.dwattr $C$DW$T$112, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$112, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$112, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stddef.h")
+	.dwattr $C$DW$T$112, DW_AT_decl_line(0x31)
+	.dwattr $C$DW$T$112, DW_AT_decl_column(0x1c)
+$C$DW$T$67	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Int")
+	.dwattr $C$DW$T$67, DW_AT_type(*$C$DW$T$10)
+	.dwattr $C$DW$T$67, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$67, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$67, DW_AT_decl_line(0x21)
+	.dwattr $C$DW$T$67, DW_AT_decl_column(0x19)
+$C$DW$T$68	.dwtag  DW_TAG_typedef, DW_AT_name("Int")
+	.dwattr $C$DW$T$68, DW_AT_type(*$C$DW$T$67)
+	.dwattr $C$DW$T$68, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$68, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$68, DW_AT_decl_line(0xd7)
+	.dwattr $C$DW$T$68, DW_AT_decl_column(0x19)
+$C$DW$T$11	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+	.dwattr $C$DW$T$11, DW_AT_byte_size(0x04)
+$C$DW$T$113	.dwtag  DW_TAG_typedef, DW_AT_name("size_t")
+	.dwattr $C$DW$T$113, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$113, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$113, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stddef.h")
+	.dwattr $C$DW$T$113, DW_AT_decl_line(0x35)
+	.dwattr $C$DW$T$113, DW_AT_decl_column(0x19)
+$C$DW$T$114	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_SizeT")
+	.dwattr $C$DW$T$114, DW_AT_type(*$C$DW$T$113)
+	.dwattr $C$DW$T$114, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$114, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$114, DW_AT_decl_line(0x28)
+	.dwattr $C$DW$T$114, DW_AT_decl_column(0x19)
+$C$DW$T$115	.dwtag  DW_TAG_typedef, DW_AT_name("SizeT")
+	.dwattr $C$DW$T$115, DW_AT_type(*$C$DW$T$114)
+	.dwattr $C$DW$T$115, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$115, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$115, DW_AT_decl_line(0xe0)
+	.dwattr $C$DW$T$115, DW_AT_decl_column(0x19)
+$C$DW$T$19	.dwtag  DW_TAG_typedef, DW_AT_name("uint32_t")
+	.dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$19, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$19, DW_AT_decl_line(0x2f)
+	.dwattr $C$DW$T$19, DW_AT_decl_column(0x1c)
+$C$DW$T$116	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast16_t")
+	.dwattr $C$DW$T$116, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$116, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$116, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$116, DW_AT_decl_line(0x48)
+	.dwattr $C$DW$T$116, DW_AT_decl_column(0x16)
+$C$DW$T$117	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast32_t")
+	.dwattr $C$DW$T$117, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$117, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$117, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$117, DW_AT_decl_line(0x4b)
+	.dwattr $C$DW$T$117, DW_AT_decl_column(0x16)
+$C$DW$T$118	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast8_t")
+	.dwattr $C$DW$T$118, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$118, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$118, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$118, DW_AT_decl_line(0x46)
+	.dwattr $C$DW$T$118, DW_AT_decl_column(0x16)
+$C$DW$T$20	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least32_t")
+	.dwattr $C$DW$T$20, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$20, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$20, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$20, DW_AT_decl_line(0x3d)
+	.dwattr $C$DW$T$20, DW_AT_decl_column(0x16)
+$C$DW$T$21	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UInt32")
+	.dwattr $C$DW$T$21, DW_AT_type(*$C$DW$T$20)
+	.dwattr $C$DW$T$21, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$21, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$21, DW_AT_decl_line(0x5e)
+	.dwattr $C$DW$T$21, DW_AT_decl_column(0x19)
+$C$DW$T$22	.dwtag  DW_TAG_typedef, DW_AT_name("UInt32")
+	.dwattr $C$DW$T$22, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$T$22, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$22, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$22, DW_AT_decl_line(0xf0)
+	.dwattr $C$DW$T$22, DW_AT_decl_column(0x19)
+$C$DW$T$120	.dwtag  DW_TAG_typedef, DW_AT_name("Uint32")
+	.dwattr $C$DW$T$120, DW_AT_type(*$C$DW$T$21)
+	.dwattr $C$DW$T$120, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$120, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$120, DW_AT_decl_line(0xfd)
+	.dwattr $C$DW$T$120, DW_AT_decl_column(0x19)
+$C$DW$T$121	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Bits32")
+	.dwattr $C$DW$T$121, DW_AT_type(*$C$DW$T$19)
+	.dwattr $C$DW$T$121, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$121, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$121, DW_AT_decl_line(0x7c)
+	.dwattr $C$DW$T$121, DW_AT_decl_column(0x19)
+$C$DW$T$122	.dwtag  DW_TAG_typedef, DW_AT_name("Bits32")
+	.dwattr $C$DW$T$122, DW_AT_type(*$C$DW$T$121)
+	.dwattr $C$DW$T$122, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$122, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$122, DW_AT_decl_line(0x117)
+	.dwattr $C$DW$T$122, DW_AT_decl_column(0x19)
+$C$DW$T$123	.dwtag  DW_TAG_typedef, DW_AT_name("uintptr_t")
+	.dwattr $C$DW$T$123, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$123, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$123, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$123, DW_AT_decl_line(0x53)
+	.dwattr $C$DW$T$123, DW_AT_decl_column(0x1a)
+$C$DW$T$124	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UArg")
+	.dwattr $C$DW$T$124, DW_AT_type(*$C$DW$T$123)
+	.dwattr $C$DW$T$124, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$124, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$124, DW_AT_decl_line(0x86)
+	.dwattr $C$DW$T$124, DW_AT_decl_column(0x19)
+$C$DW$T$125	.dwtag  DW_TAG_typedef, DW_AT_name("UArg")
+	.dwattr $C$DW$T$125, DW_AT_type(*$C$DW$T$124)
+	.dwattr $C$DW$T$125, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$125, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$125, DW_AT_decl_line(0xe4)
+	.dwattr $C$DW$T$125, DW_AT_decl_column(0x19)
+$C$DW$T$126	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UInt")
+	.dwattr $C$DW$T$126, DW_AT_type(*$C$DW$T$11)
+	.dwattr $C$DW$T$126, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$126, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$126, DW_AT_decl_line(0x22)
+	.dwattr $C$DW$T$126, DW_AT_decl_column(0x19)
+$C$DW$T$127	.dwtag  DW_TAG_typedef, DW_AT_name("UInt")
+	.dwattr $C$DW$T$127, DW_AT_type(*$C$DW$T$126)
+	.dwattr $C$DW$T$127, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$127, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$127, DW_AT_decl_line(0xd8)
+	.dwattr $C$DW$T$127, DW_AT_decl_column(0x19)
+$C$DW$T$128	.dwtag  DW_TAG_typedef, DW_AT_name("Uns")
+	.dwattr $C$DW$T$128, DW_AT_type(*$C$DW$T$126)
+	.dwattr $C$DW$T$128, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$128, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$128, DW_AT_decl_line(0xfe)
+	.dwattr $C$DW$T$128, DW_AT_decl_column(0x19)
+$C$DW$T$12	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$12, DW_AT_name("long")
+	.dwattr $C$DW$T$12, DW_AT_byte_size(0x04)
+$C$DW$T$129	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Long")
+	.dwattr $C$DW$T$129, DW_AT_type(*$C$DW$T$12)
+	.dwattr $C$DW$T$129, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$129, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$129, DW_AT_decl_line(0x23)
+	.dwattr $C$DW$T$129, DW_AT_decl_column(0x19)
+$C$DW$T$130	.dwtag  DW_TAG_typedef, DW_AT_name("Long")
+	.dwattr $C$DW$T$130, DW_AT_type(*$C$DW$T$129)
+	.dwattr $C$DW$T$130, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$130, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$130, DW_AT_decl_line(0xd9)
+	.dwattr $C$DW$T$130, DW_AT_decl_column(0x19)
+$C$DW$T$13	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+	.dwattr $C$DW$T$13, DW_AT_byte_size(0x04)
+$C$DW$T$131	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_ULong")
+	.dwattr $C$DW$T$131, DW_AT_type(*$C$DW$T$13)
+	.dwattr $C$DW$T$131, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$131, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$131, DW_AT_decl_line(0x24)
+	.dwattr $C$DW$T$131, DW_AT_decl_column(0x19)
+$C$DW$T$132	.dwtag  DW_TAG_typedef, DW_AT_name("ULong")
+	.dwattr $C$DW$T$132, DW_AT_type(*$C$DW$T$131)
+	.dwattr $C$DW$T$132, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$132, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$132, DW_AT_decl_line(0xda)
+	.dwattr $C$DW$T$132, DW_AT_decl_column(0x19)
+$C$DW$T$14	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+	.dwattr $C$DW$T$14, DW_AT_name("long long")
+	.dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+$C$DW$T$133	.dwtag  DW_TAG_typedef, DW_AT_name("int64_t")
+	.dwattr $C$DW$T$133, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$T$133, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$133, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$133, DW_AT_decl_line(0x32)
+	.dwattr $C$DW$T$133, DW_AT_decl_column(0x21)
+$C$DW$T$134	.dwtag  DW_TAG_typedef, DW_AT_name("int_fast64_t")
+	.dwattr $C$DW$T$134, DW_AT_type(*$C$DW$T$133)
+	.dwattr $C$DW$T$134, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$134, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$134, DW_AT_decl_line(0x4e)
+	.dwattr $C$DW$T$134, DW_AT_decl_column(0x17)
+$C$DW$T$135	.dwtag  DW_TAG_typedef, DW_AT_name("int_least64_t")
+	.dwattr $C$DW$T$135, DW_AT_type(*$C$DW$T$133)
+	.dwattr $C$DW$T$135, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$135, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$135, DW_AT_decl_line(0x40)
+	.dwattr $C$DW$T$135, DW_AT_decl_column(0x17)
+$C$DW$T$136	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Int64")
+	.dwattr $C$DW$T$136, DW_AT_type(*$C$DW$T$135)
+	.dwattr $C$DW$T$136, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$136, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$136, DW_AT_decl_line(0x61)
+	.dwattr $C$DW$T$136, DW_AT_decl_column(0x1d)
+$C$DW$T$137	.dwtag  DW_TAG_typedef, DW_AT_name("Int64")
+	.dwattr $C$DW$T$137, DW_AT_type(*$C$DW$T$136)
+	.dwattr $C$DW$T$137, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$137, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$137, DW_AT_decl_line(0x106)
+	.dwattr $C$DW$T$137, DW_AT_decl_column(0x19)
+$C$DW$T$138	.dwtag  DW_TAG_typedef, DW_AT_name("intmax_t")
+	.dwattr $C$DW$T$138, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$T$138, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$138, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$138, DW_AT_decl_line(0x56)
+	.dwattr $C$DW$T$138, DW_AT_decl_column(0x20)
+$C$DW$T$139	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_LLong")
+	.dwattr $C$DW$T$139, DW_AT_type(*$C$DW$T$14)
+	.dwattr $C$DW$T$139, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$139, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$139, DW_AT_decl_line(0x83)
+	.dwattr $C$DW$T$139, DW_AT_decl_column(0x21)
+$C$DW$T$140	.dwtag  DW_TAG_typedef, DW_AT_name("LLong")
+	.dwattr $C$DW$T$140, DW_AT_type(*$C$DW$T$139)
+	.dwattr $C$DW$T$140, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$140, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$140, DW_AT_decl_line(0xdb)
+	.dwattr $C$DW$T$140, DW_AT_decl_column(0x19)
+$C$DW$T$15	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+	.dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+	.dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+$C$DW$T$141	.dwtag  DW_TAG_typedef, DW_AT_name("uint64_t")
+	.dwattr $C$DW$T$141, DW_AT_type(*$C$DW$T$15)
+	.dwattr $C$DW$T$141, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$141, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$141, DW_AT_decl_line(0x33)
+	.dwattr $C$DW$T$141, DW_AT_decl_column(0x20)
+$C$DW$T$142	.dwtag  DW_TAG_typedef, DW_AT_name("uint_fast64_t")
+	.dwattr $C$DW$T$142, DW_AT_type(*$C$DW$T$141)
+	.dwattr $C$DW$T$142, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$142, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$142, DW_AT_decl_line(0x4f)
+	.dwattr $C$DW$T$142, DW_AT_decl_column(0x16)
+$C$DW$T$143	.dwtag  DW_TAG_typedef, DW_AT_name("uint_least64_t")
+	.dwattr $C$DW$T$143, DW_AT_type(*$C$DW$T$141)
+	.dwattr $C$DW$T$143, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$143, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$143, DW_AT_decl_line(0x41)
+	.dwattr $C$DW$T$143, DW_AT_decl_column(0x16)
+$C$DW$T$144	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_UInt64")
+	.dwattr $C$DW$T$144, DW_AT_type(*$C$DW$T$143)
+	.dwattr $C$DW$T$144, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$144, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$144, DW_AT_decl_line(0x62)
+	.dwattr $C$DW$T$144, DW_AT_decl_column(0x1e)
+$C$DW$T$145	.dwtag  DW_TAG_typedef, DW_AT_name("UInt64")
+	.dwattr $C$DW$T$145, DW_AT_type(*$C$DW$T$144)
+	.dwattr $C$DW$T$145, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$145, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$145, DW_AT_decl_line(0x107)
+	.dwattr $C$DW$T$145, DW_AT_decl_column(0x19)
+$C$DW$T$146	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Bits64")
+	.dwattr $C$DW$T$146, DW_AT_type(*$C$DW$T$141)
+	.dwattr $C$DW$T$146, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$146, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h")
+	.dwattr $C$DW$T$146, DW_AT_decl_line(0x7f)
+	.dwattr $C$DW$T$146, DW_AT_decl_column(0x19)
+$C$DW$T$147	.dwtag  DW_TAG_typedef, DW_AT_name("Bits64")
+	.dwattr $C$DW$T$147, DW_AT_type(*$C$DW$T$146)
+	.dwattr $C$DW$T$147, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$147, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$147, DW_AT_decl_line(0x11b)
+	.dwattr $C$DW$T$147, DW_AT_decl_column(0x19)
+$C$DW$T$148	.dwtag  DW_TAG_typedef, DW_AT_name("uintmax_t")
+	.dwattr $C$DW$T$148, DW_AT_type(*$C$DW$T$15)
+	.dwattr $C$DW$T$148, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$148, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdint.h")
+	.dwattr $C$DW$T$148, DW_AT_decl_line(0x57)
+	.dwattr $C$DW$T$148, DW_AT_decl_column(0x20)
+$C$DW$T$149	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_ULLong")
+	.dwattr $C$DW$T$149, DW_AT_type(*$C$DW$T$15)
+	.dwattr $C$DW$T$149, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$149, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$149, DW_AT_decl_line(0x84)
+	.dwattr $C$DW$T$149, DW_AT_decl_column(0x21)
+$C$DW$T$150	.dwtag  DW_TAG_typedef, DW_AT_name("ULLong")
+	.dwattr $C$DW$T$150, DW_AT_type(*$C$DW$T$149)
+	.dwattr $C$DW$T$150, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$150, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$150, DW_AT_decl_line(0xdc)
+	.dwattr $C$DW$T$150, DW_AT_decl_column(0x19)
+$C$DW$T$16	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$16, DW_AT_name("float")
+	.dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+$C$DW$T$27	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Float")
+	.dwattr $C$DW$T$27, DW_AT_type(*$C$DW$T$16)
+	.dwattr $C$DW$T$27, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$27, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$27, DW_AT_decl_line(0x25)
+	.dwattr $C$DW$T$27, DW_AT_decl_column(0x19)
+$C$DW$T$151	.dwtag  DW_TAG_typedef, DW_AT_name("Float")
+	.dwattr $C$DW$T$151, DW_AT_type(*$C$DW$T$27)
+	.dwattr $C$DW$T$151, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$151, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$151, DW_AT_decl_line(0xdd)
+	.dwattr $C$DW$T$151, DW_AT_decl_column(0x19)
+$C$DW$T$17	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$17, DW_AT_name("double")
+	.dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
+$C$DW$T$152	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Double")
+	.dwattr $C$DW$T$152, DW_AT_type(*$C$DW$T$17)
+	.dwattr $C$DW$T$152, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$152, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$152, DW_AT_decl_line(0x26)
+	.dwattr $C$DW$T$152, DW_AT_decl_column(0x19)
+$C$DW$T$153	.dwtag  DW_TAG_typedef, DW_AT_name("Double")
+	.dwattr $C$DW$T$153, DW_AT_type(*$C$DW$T$152)
+	.dwattr $C$DW$T$153, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$153, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$153, DW_AT_decl_line(0xde)
+	.dwattr $C$DW$T$153, DW_AT_decl_column(0x19)
+$C$DW$T$18	.dwtag  DW_TAG_base_type
+	.dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+	.dwattr $C$DW$T$18, DW_AT_name("long double")
+	.dwattr $C$DW$T$18, DW_AT_byte_size(0x08)
+$C$DW$T$154	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_LDouble")
+	.dwattr $C$DW$T$154, DW_AT_type(*$C$DW$T$18)
+	.dwattr $C$DW$T$154, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$154, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$154, DW_AT_decl_line(0x27)
+	.dwattr $C$DW$T$154, DW_AT_decl_column(0x19)
+$C$DW$T$155	.dwtag  DW_TAG_typedef, DW_AT_name("LDouble")
+	.dwattr $C$DW$T$155, DW_AT_type(*$C$DW$T$154)
+	.dwattr $C$DW$T$155, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$155, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$155, DW_AT_decl_line(0xdf)
+	.dwattr $C$DW$T$155, DW_AT_decl_column(0x19)
+$C$DW$T$51	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$51, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$51, DW_AT_address_class(0x20)
+$C$DW$T$156	.dwtag  DW_TAG_typedef, DW_AT_name("__builtin_va_list")
+	.dwattr $C$DW$T$156, DW_AT_type(*$C$DW$T$51)
+	.dwattr $C$DW$T$156, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$156, DW_AT_decl_file("../../common/Trace.c")
+	.dwattr $C$DW$T$156, DW_AT_decl_line(0x19c)
+	.dwattr $C$DW$T$156, DW_AT_decl_column(0x01)
+$C$DW$T$157	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_String")
+	.dwattr $C$DW$T$157, DW_AT_type(*$C$DW$T$51)
+	.dwattr $C$DW$T$157, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$157, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$157, DW_AT_decl_line(0x30)
+	.dwattr $C$DW$T$157, DW_AT_decl_column(0x1a)
+$C$DW$T$158	.dwtag  DW_TAG_typedef, DW_AT_name("String")
+	.dwattr $C$DW$T$158, DW_AT_type(*$C$DW$T$157)
+	.dwattr $C$DW$T$158, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$158, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$158, DW_AT_decl_line(0xeb)
+	.dwattr $C$DW$T$158, DW_AT_decl_column(0x19)
+$C$DW$T$159	.dwtag  DW_TAG_const_type
+	.dwattr $C$DW$T$159, DW_AT_type(*$C$DW$T$6)
+$C$DW$T$160	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$160, DW_AT_type(*$C$DW$T$159)
+	.dwattr $C$DW$T$160, DW_AT_address_class(0x20)
+$C$DW$T$161	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_CString")
+	.dwattr $C$DW$T$161, DW_AT_type(*$C$DW$T$160)
+	.dwattr $C$DW$T$161, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$161, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$161, DW_AT_decl_line(0x31)
+	.dwattr $C$DW$T$161, DW_AT_decl_column(0x1a)
+$C$DW$T$162	.dwtag  DW_TAG_typedef, DW_AT_name("CString")
+	.dwattr $C$DW$T$162, DW_AT_type(*$C$DW$T$161)
+	.dwattr $C$DW$T$162, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$162, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$162, DW_AT_decl_line(0xec)
+	.dwattr $C$DW$T$162, DW_AT_decl_column(0x19)
+$C$DW$T$56	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_Char")
+	.dwattr $C$DW$T$56, DW_AT_type(*$C$DW$T$6)
+	.dwattr $C$DW$T$56, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$56, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$56, DW_AT_decl_line(0x1d)
+	.dwattr $C$DW$T$56, DW_AT_decl_column(0x19)
+$C$DW$T$57	.dwtag  DW_TAG_typedef, DW_AT_name("Char")
+	.dwattr $C$DW$T$57, DW_AT_type(*$C$DW$T$56)
+	.dwattr $C$DW$T$57, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$57, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$57, DW_AT_decl_line(0xd3)
+	.dwattr $C$DW$T$57, DW_AT_decl_column(0x19)
+$C$DW$T$58	.dwtag  DW_TAG_pointer_type
+	.dwattr $C$DW$T$58, DW_AT_type(*$C$DW$T$57)
+	.dwattr $C$DW$T$58, DW_AT_address_class(0x20)
+
+$C$DW$T$36	.dwtag  DW_TAG_structure_type
+	.dwattr $C$DW$T$36, DW_AT_name("__va_list")
+	.dwattr $C$DW$T$36, DW_AT_byte_size(0x04)
+$C$DW$153	.dwtag  DW_TAG_member
+	.dwattr $C$DW$153, DW_AT_type(*$C$DW$T$3)
+	.dwattr $C$DW$153, DW_AT_name("__ap")
+	.dwattr $C$DW$153, DW_AT_TI_symbol_name("__ap")
+	.dwattr $C$DW$153, DW_AT_data_member_location[DW_OP_plus_uconst 0x0]
+	.dwattr $C$DW$153, DW_AT_accessibility(DW_ACCESS_public)
+	.dwattr $C$DW$153, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdarg.h")
+	.dwattr $C$DW$153, DW_AT_decl_line(0x32)
+	.dwattr $C$DW$153, DW_AT_decl_column(0x0c)
+	.dwendtag $C$DW$T$36
+
+	.dwattr $C$DW$T$36, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdarg.h")
+	.dwattr $C$DW$T$36, DW_AT_decl_line(0x31)
+	.dwattr $C$DW$T$36, DW_AT_decl_column(0x10)
+$C$DW$T$163	.dwtag  DW_TAG_typedef, DW_AT_name("va_list")
+	.dwattr $C$DW$T$163, DW_AT_type(*$C$DW$T$36)
+	.dwattr $C$DW$T$163, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$163, DW_AT_decl_file("/opt/Project/Camera/Source/ipnc_rdk/../ti_tools/cgt470_5_1_3/include/stdarg.h")
+	.dwattr $C$DW$T$163, DW_AT_decl_line(0x33)
+	.dwattr $C$DW$T$163, DW_AT_decl_column(0x03)
+$C$DW$T$164	.dwtag  DW_TAG_typedef, DW_AT_name("xdc_VaList")
+	.dwattr $C$DW$T$164, DW_AT_type(*$C$DW$T$163)
+	.dwattr $C$DW$T$164, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$164, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$164, DW_AT_decl_line(0x29)
+	.dwattr $C$DW$T$164, DW_AT_decl_column(0x19)
+$C$DW$T$165	.dwtag  DW_TAG_typedef, DW_AT_name("VaList")
+	.dwattr $C$DW$T$165, DW_AT_type(*$C$DW$T$164)
+	.dwattr $C$DW$T$165, DW_AT_language(DW_LANG_C)
+	.dwattr $C$DW$T$165, DW_AT_decl_file("/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h")
+	.dwattr $C$DW$T$165, DW_AT_decl_line(0xe1)
+	.dwattr $C$DW$T$165, DW_AT_decl_column(0x19)
+	.dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+
+;***************************************************************
+;* DWARF CIE ENTRIES                                           *
+;***************************************************************
+
+$C$DW$CIE	.dwcie 14
+	.dwcfi	cfa_register, 13
+	.dwcfi	cfa_offset, 0
+	.dwcfi	undefined, 0
+	.dwcfi	undefined, 1
+	.dwcfi	undefined, 2
+	.dwcfi	undefined, 3
+	.dwcfi	same_value, 4
+	.dwcfi	same_value, 5
+	.dwcfi	same_value, 6
+	.dwcfi	same_value, 7
+	.dwcfi	same_value, 8
+	.dwcfi	same_value, 9
+	.dwcfi	same_value, 10
+	.dwcfi	same_value, 11
+	.dwcfi	undefined, 12
+	.dwcfi	undefined, 13
+	.dwcfi	undefined, 14
+	.dwcfi	undefined, 14
+	.dwcfi	undefined, 7
+	.dwendentry
+	.dwendtag $C$DW$CU
+

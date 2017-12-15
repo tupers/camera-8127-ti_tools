@@ -1,0 +1,109 @@
+#############################################################################
+# Makefile_src                                                              #
+#                                                                           #
+#  Common make file invoked by all test driver projects in this directory   #
+#############################################################################
+#
+#
+#############################################################################
+#                                                                           #
+#   Copyright (C) 2010 Texas Instruments Incorporated                       #
+#     http://www.ti.com/                                                    #
+#                                                                           #
+#############################################################################
+ifndef IMGLIB_INSTALL_DIR
+    IMGLIB_INSTALL_DIR = ../../..
+endif
+
+include $(IMGLIB_INSTALL_DIR)/Rules.make
+
+TARGET = $(notdir $(CURDIR))
+CUR_DIR = "."
+# Comment this out if you want to see full compiler and linker output.
+VERBOSE = @
+#BUILD_TYPE = Release
+export CODEGEN_INSTALL_DIR	
+
+#Linker command file used
+LFILE = ../common/kernel_test.cmd
+
+#Includes for the build
+INCLUDES = -i$(CODEGEN_INSTALL_DIR)/include  \
+           -i../common                       \
+           -i$(IMGLIB_INSTALL_DIR)/include    
+
+#Map file to be generated  
+MAP_FILE = $(BUILD_TYPE)/$(TARGET).map
+
+#Name of the binary
+EXE = $(BUILD_TYPE)/$(TARGET).out
+
+#Set Compiler and Linker flags based on Configuration specified 
+ifeq ($(BUILD_TYPE), Release)
+    LD_FLAGS 	+= -z -c -heap 0x10000 -stack 0x2000 -m $(MAP_FILE) -o$(EXE) -w -x -i $(CODEGEN_INSTALL_DIR)/lib  
+    C_FLAGS	+= -o3 $(INCLUDES) -mv6400+ -fr"$(BUILD_TYPE)" -fs"$(BUILD_TYPE)" -ft"$(BUILD_TYPE)" -d"__TI_EABI__=0" -q  -k -ml3 -mw -mi
+endif
+ifeq ($(BUILD_TYPE), Release_elf)
+    LD_FLAGS 	+= --abi=eabi -z -c -heap 0x10000 -stack 0x2000 -m $(MAP_FILE) -o$(EXE) -w -x -i $(CODEGEN_INSTALL_DIR)/lib 
+    C_FLAGS	+= --abi=eabi -o3 $(INCLUDES) -mv6400+ -fr"$(BUILD_TYPE)" -fs"$(BUILD_TYPE)" -ft"$(BUILD_TYPE)" -q  -k -ml3 -mw -mi
+endif
+
+#Set Compiler and Linker paths and flags for the build
+COMPILE.c = $(VERBOSE) $(CODEGEN_INSTALL_DIR)/bin/cl6x $(C_FLAGS)
+LINK.c = $(VERBOSE) $(CODEGEN_INSTALL_DIR)/bin/cl6x $(LD_FLAGS)
+
+# C Sources to be built
+SOURCES = $(wildcard *.c) 
+CSRC  = $(IMGLIB_INSTALL_DIR)/kernels/c/$(TARGET)_c.c
+ISRC  = $(IMGLIB_INSTALL_DIR)/kernels/intrinsic/$(TARGET)_i.c
+COMMON_SRC = $(wildcard ../common/*.c)
+
+# Header to be included 
+HEADERS = $(wildcard *.h) $(wildcard ../common/*.h) $(wildcard ../../../../include/*.h)
+
+#Object files to be built
+OBJFILES = $(SOURCES:%.c=$(BUILD_TYPE)/%.obj) $(COMMON_SRC:../common/%.c=$(BUILD_TYPE)/%.obj) \
+           $(CSRC:$(IMGLIB_INSTALL_DIR)/kernels/c/%.c=$(BUILD_TYPE)/%.obj) \
+           $(ISRC:$(IMGLIB_INSTALL_DIR)/kernels/intrinsic/%.c=$(BUILD_TYPE)/%.obj) 
+           
+COMMON_OBJ = $(COMMON_SRC:../common/%.c=$(BUILD_TYPE)/%.obj)
+
+
+.PHONY: clean install 
+
+all:	TARGET
+
+TARGET: $(BUILD_TYPE)/$(TARGET).out
+
+$(BUILD_TYPE)/$(TARGET).out: $(OBJFILES) $(COMMON_OBJ) $(LFILE)
+	@echo
+	@echo Linking $@ from $^..
+	@echo $(LINK.c) -o $@ $^
+	$(LINK.c) -o $@ $^ 
+
+$(BUILD_TYPE)/%.obj: %.c $(HEADERS) 
+	@echo Compiling $@ from $<..
+	@echo $(COMPILE.c) $(INCLUDES)$<
+	@echo mkdir -p $(BUILD_TYPE)
+	@mkdir -p $(BUILD_TYPE)
+	@chmod 777 $(BUILD_TYPE)
+	$(COMPILE.c) $(INCLUDES) $<
+
+$(BUILD_TYPE)/%.obj:../common/%.c $(HEADERS) 
+	@echo Compiling $@ from $<..
+	@echo $(COMPILE.c) $(INCLUDES)$<
+	$(COMPILE.c) $(INCLUDES) $<
+
+$(BUILD_TYPE)/%.obj: $(IMGLIB_INSTALL_DIR)/kernels/c/%.c $(HEADERS) 
+	@echo Compiling $@ from $<..
+	@echo $(COMPILE.c) $(INCLUDES)$<
+	$(COMPILE.c) $(INCLUDES) $<
+
+$(BUILD_TYPE)/%.obj: $(IMGLIB_INSTALL_DIR)/kernels/intrinsic/%.c $(HEADERS) 
+	@echo Compiling $@ from $<..
+	@echo $(COMPILE.c) $(INCLUDES)$<
+	$(COMPILE.c) $(INCLUDES) $<
+
+clean:
+	@echo Removing generated files..
+	$(VERBOSE) -$(RM) -r $(BUILD_TYPE) *~ *.d .dep

@@ -1,0 +1,14 @@
+package/lib/lib/debug/ti.syslink.utils.rtos.bios6/rtos/osal/bios6/MemoryOS.oe674: ../../rtos/osal/bios6/MemoryOS.c /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_Memory.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_MemoryOS.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/OsalPrint.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_MemoryDefs.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h 
+../../rtos/osal/bios6/MemoryOS.c:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_Memory.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_MemoryOS.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/OsalPrint.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/_MemoryDefs.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h:

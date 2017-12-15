@@ -1,0 +1,12 @@
+package.xdc
+package.xs
+package/ti.syslink.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b160
+package/.xdc-z63
+package/ti_syslink.java
+package/ti_syslink.class
+package/package_ti.syslink.c
+package/package.defs.h
+package/ti.syslink.ccs

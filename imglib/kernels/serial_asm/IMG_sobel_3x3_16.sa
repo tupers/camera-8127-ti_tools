@@ -1,0 +1,568 @@
+* ======================================================================== *
+*  TEXAS INSTRUMENTS, INC.                                                 *
+*                                                                          *
+*  IMGLIB-2  DSP Image/Video Processing Library                            *
+*                                                                          *
+*      Release:        Revision 2.0.1                                      *
+*      Snapshot date:  6-May-2008                                          *
+*                                                                          *
+*  This library contains proprietary intellectual property of Texas        *
+*  Instruments, Inc.  The library and its source code are protected by     *
+*  various copyrights, and portions may also be protected by patents or    *
+*  other legal protections.                                                *
+*                                                                          *
+*  This software is licensed for use with Texas Instruments TMS320         *
+*  family DSPs.  This license was provided to you prior to installing      *
+*  the software.  You may review this license by consulting the file       *
+*  TI_license.PDF which accompanies the files in this library.             *
+* ------------------------------------------------------------------------ *
+*          Copyright (C) 2008 Texas Instruments, Incorporated.             *
+*                          All Rights Reserved.                            *
+* ======================================================================== *
+* =========================================================================== *
+*   NAME                                                                      *
+*       IMG_sobel_3x3_16: Little Endian, sobel 3x3 for 16-bit unsigned data.  *
+*                                                                             *
+*   USAGE                                                                     *
+*       This routine is C-callable and can be called as:                      *
+*                                                                             *
+*       void IMG_sobel_3x3_16                                                 *
+*       (                                                                     *
+*           const unsigned short *in_data,    /* Input image data  */         *
+*           unsigned short       *out_data,   /* Output image data */         *
+*           short cols, short rows     	      /* Image dimensions  */         *
+*       )                                                                     *
+*                                                                             *
+*       The IMG_sobel filter is applied to the input image. The input image   *
+*       dimensions are given by the arguments 'cols' and 'rows'.  The         *
+*       output image is 'cols' pixels wide and 'rows - 2' pixels tall.        *
+*                                                                             *
+*   DESCRIPTION                                                               *
+*                                                                             *
+*       To see how the implementation is going to work on the input           *
+*       buffer, lets imagine we have the following input buffer:              *
+*                                                                             *
+*               yyyyyyyyyyyyyyyy                                              *
+*               yxxxxxxxxxxxxxxy                                              *
+*               yxxxxxxxxxxxxxxy                                              *
+*               yxxxxxxxxxxxxxxy                                              *
+*               yxxxxxxxxxxxxxxy                                              *
+*               yyyyyyyyyyyyyyyy                                              *
+*                                                                             *
+*       The output buffer would be:                                           *
+*                                                                             *
+*               tXXXXXXXXXXXXXXz                                              *
+*               zXXXXXXXXXXXXXXz                                              *
+*               zXXXXXXXXXXXXXXz                                              *
+*               zXXXXXXXXXXXXXXt                                              *
+*                                                                             *
+*       Where:                                                                *
+*                                                                             *
+*           X = IMG_sobel(x)    The algorithm is applied to that pixel.       *
+*                           The correct output is obtained, the data          *
+*                           around the pixels we work on is used              *
+*                                                                             *
+*           t               Whatever was in the output buffer in that         *
+*                           position is kept there.                           *
+*                                                                             *
+*           z = IMG_sobel(y)    The algorithm is applied to that pixel.       *
+*                           The output is not meaningful, because the         *
+*                           necessary data to process the pixel is not        *
+*                           available.  This is because for each output       *
+*                           pixel we need input pixels from the right and     *
+*                           from the left of the output pixel.  But this      *
+*                           data doesn't exist.                               *
+*                                                                             *
+*       This means that we will only process (rows-2) lines.  Then, we        *
+*       will process all the pixels inside each line. Even though the         *
+*       results for the first and last pixels in each line will not           *
+*       be relevant, it makes the control much simpler and ends up            *
+*       saving cycles.                                                        *
+*                                                                             *
+*       Also the first pixel in the first processed line and the              *
+*       last pixel in the last processed line will not be computed.           *
+*       It is not necessary, since the results would be bogus.                *
+*                                                                             *
+*       The following horizontal and vertical masks that are                  *
+*       applied to the input buffer to obtain one output pixel.               *
+*                                                                             *
+*           Horizontal:                                                       *
+*               -1 -2 -1                                                      *
+*                0  0  0                                                      *
+*                1  2  1                                                      *
+*                                                                             *
+*           Vertical:                                                         *
+*               -1  0  1                                                      *
+*               -2  0  2                                                      *
+*               -1  0  1                                                      *
+*                                                                             *
+*       This is a C model of the Sobel implementation.  This C code           *
+*       is functionally equivalent to the assembly code without               *
+*       restrictions.   The assembly code may impose additional               *
+*       restrictions.                                                         *
+*                                                                             *
+*           void IMG_sobel_3x3_16                                                 *
+*           (                                                                 *
+*               const unsigned short *in,       /* Input image data  */       *
+*               unsigned short       *out,      /* Output image data */       *
+*               short cols, short rows          /* Image dimensions  */       *
+*           )                                                                 *
+*           {                                                                 *
+*               /* ------------------------------------------------ */        *
+*               /*  Intermediate values.                            */        *
+*               /* ------------------------------------------------ */        *
+*               int H;    /* Horizontal mask result                 */        *
+*               int V;    /* Vertical mask result                   */        *
+*               int O;    /* Sum of horizontal and vertical masks   */        *
+*               int i;    /* Input pixel offset                     */        *
+*               int o;    /* Output pixel offset.                   */        *
+*               int xy;   /* Loop counter.                          */        *
+*                                                                             *
+*               /* ------------------------------------------------ */        *
+*               /*  Input values.                                   */        *
+*               /* ------------------------------------------------ */        *
+*               int i00, i01, i02;                                            *
+*               int i10,      i12;                                            *
+*               int i20, i21, i22;                                            *
+*                                                                             *
+*               /* ------------------------------------------------ */        *
+*               /*  Step through the entire image.  We step         */        *
+*               /*  through 'rows - 2' rows in the output image,    */        *
+*               /*  since those are the only rows that are fully    */        *
+*               /*  defined for our filter.                         */        *
+*               /* ------------------------------------------------ */        *
+*               for (xy = 0, i = cols + 1, o = 1;                             *
+*                    xy < cols*(rows-2) - 2;                                  *
+*                    xy++, i++, o++)                                          *
+*               {                                                             *
+*                                                                             *
+*                   /* -------------------------------------------- */        *
+*                   /*  Read necessary data to process an input     */        *
+*                   /*  pixel.  The following instructions are      */        *
+*                   /*  written to reflect the position of the      */        *
+*                   /*  input pixels in reference to the pixel      */        *
+*                   /*  being processed, which would correspond     */        *
+*                   /*  to the blank space left in the middle.      */        *
+*                   /* -------------------------------------------- */        *
+*                   i00=in[i-cols-1]; i01=in[i-cols]; i02=in[i-cols+1];       *
+*                   i10=in[i     -1];                 i12=in[i     +1];       *
+*                   i20=in[i+cols-1]; i21=in[i+cols]; i22=in[i+cols+1];       *
+*                                                                             *
+*                   /* -------------------------------------------- */        *
+*                   /*  Apply the horizontal mask.                  */        *
+*                   /* -------------------------------------------- */        *
+*                   H = -i00 - 2*i01 -   i02 +   i20 + 2*i21 + i22;           *
+*                                                                             *
+*                   /* -------------------------------------------- */        *
+*                   /*  Apply the vertical mask.                    */        *
+*                   /* -------------------------------------------- */        *
+*                   V = -i00 +   i02 - 2*i10 + 2*i12 -   i20 + i22;           *
+*                                                                             *
+*                   O = abs(H) + abs(V);                                      *
+*                                                                             *
+*                   /* -------------------------------------------- */        *
+*                   /*  If the result is over 65535 (largest valid  */        *
+*                   /*  pixel value), saturate (clamp) to 65535.    */        *
+*                   /* -------------------------------------------- */        *
+*                   if (O > 0xFFFF) O = 0xFFFF;                               *
+*                                                                             *
+*                   /* -------------------------------------------- */        *
+*                   /*  Store the result.                           */        *
+*                   /* -------------------------------------------- */        *
+*                   out[o] = O;                                               *
+*               }                                                             *
+*           }                                                                 *
+*                                                                             *
+*   TECHNIQUES                                                                *
+*       Four output pixels are computed per iteration using loop unrolling    *
+*       and packed operations.                                                *
+*                                                                             *
+*   ASSUMPTIONS                                                               *
+*       At least four output pixels must be processed.                        *
+*       The input image width must be even (eg. 'cols' must be even).         *
+*       rows >= 3                                                             *
+*                                                                             *
+*   MEMORY NOTE                                                               *
+*       No bank conflicts occur.                                              *
+*       There are no alignment restrictions.                                  *
+*                                                                             *
+*   NOTES                                                                     *
+*       This is a LITTLE ENDIAN implementation.                               *
+*       The image arrays do not need to be aligned.                           *
+*                                                                             *
+*       The values of the left-most and right-most pixels on each line        *
+*       of the output are not well-defined.                                   *
+*                                                                             *
+*   CYCLES                                                                    *
+*       cycles = 15 * cols * (rows-2)/4 + 32,                                 *
+*       For cols = 128 and rows = 8, cycles = 2912.                           *
+* --------------------------------------------------------------------------- *
+*            Copyright (c) 2008 Texas Instruments, Incorporated.              *
+*                           All Rights Reserved.                              *
+* =========================================================================== *
+
+      		.sect ".text:IMG_sobel_3x3_16"
+                .if     __TI_EABI__
+          		 .asg    IMG_sobel_3x3_16, _IMG_sobel_3x3_16
+                .endif
+       		.global _IMG_sobel_3x3_16
+_IMG_sobel_3x3_16:  .cproc  A_in,    B_out,  A_w,   B_h
+            .no_mdep
+
+			.reg 	B_in
+			.reg	A_in1
+			.reg	A_in2
+			.reg	B_in1
+			.reg	B_in2
+			.reg	A_cnt
+			.reg	B_final
+
+			.reg	x0_h:x0_l
+			.reg	x1_h:x1_l
+			.reg	x2_h:x2_l
+
+			.reg	y0_h:y0_l
+			.reg	y1_h:y1_l
+			.reg	y2_h:y2_l
+
+			.reg	chuk0,chuk1,chuk2,chuk3
+			.reg	chuk_atas,chuk_bawah,chuk_atas_
+			.reg	chuk_bawah_
+			.reg	ychuk0,ychuk1,ychuk2,ychuk3
+			.reg	ychuk_atas,ychuk_bawah,ychuk_atas_
+			.reg	ychuk_bawah_
+
+			.reg	line0_0_l
+			.reg	line0_1_l
+			.reg	line0_0_h
+			.reg	line0_1_h
+			.reg	line2_0_l
+			.reg	line2_1_l
+			.reg	line2_0_h
+			.reg	line2_1_h
+
+			.reg	line0_0_l_
+			.reg	line0_1_l_
+			.reg	line0_0_h_
+			.reg	line0_1_h_
+			.reg	line2_0_l_
+			.reg	line2_1_l_
+			.reg	line2_0_h_
+			.reg	line2_1_h_
+
+			.reg	yline0_0_l
+			.reg	yline0_1_l
+			.reg	yline0_0_h
+			.reg	yline0_1_h
+			.reg	yline2_0_l
+			.reg	yline2_1_l
+			.reg	yline2_0_h
+			.reg	yline2_1_h
+
+			.reg	yline0_0_l_
+			.reg	yline0_1_l_
+			.reg	yline0_0_h_
+			.reg	yline0_1_h_
+			.reg	yline2_0_l_
+			.reg	yline2_1_l_
+			.reg	yline2_0_h_
+			.reg	yline2_1_h_
+			.reg	tempZ
+			.reg	line0,line1,line2
+
+			.reg	pix1,pix1_h,pix1temp,pix2,pix2_h,pix2temp
+			.reg	pix3,pix3_h,pix3temp,pix4,pix4_h,pix4temp
+			.reg	pix5,pix5_h,pix5temp,pix6,pix6_h,pix6temp
+
+			.reg	twos, ones	
+			.reg	x1_h_doub,	x1_h_doub1, x0_h_ones, x0_h_ones1
+			.reg	x1_l_doub,	x1_l_doub1, x2_h_ones, x2_h_ones1
+			.reg	x0_l_ones, x0_l_ones1
+			.reg	x2_l_ones, x2_l_ones1
+			.reg	y1_h_doub,	y1_h_doub1, y0_h_ones, y0_h_ones1
+			.reg	y1_l_doub,	y1_l_doub1, y2_h_ones, y2_h_ones1
+			.reg	pix43:pix21
+			.reg	offset,offset1
+			.reg	A_out
+			.reg	pixx
+
+; ---------------------------------------------------------------------------------------
+
+
+			MVKL	0x0001, ones				; prepare [1 1] data
+			MVKLH	0x0001, ones				;
+
+			MVKL	0x0002, twos				; prepare [1 1] data
+			MVKLH	0x0002,	twos        		;
+
+;			MPY		2,	ones, twos
+
+			MVKL	0x8000,	offset1				; 0x00008000 constant
+			MVKLH	0x0000,	offset1
+			
+			MVKL	0x8000,	offset
+			MVKLH	0x8000,	offset
+
+;			SET		offset1,	31,31,	offset
+			;; ----------------
+			;; input addresses
+			;; ----------------
+			
+			; tempZ = length of data every row
+			SHL		A_w,	1,	tempZ
+			ADD		A_in,	tempZ,	A_in1				; *line 1
+			ADD		A_in1,	tempZ,	A_in2				; *line 2
+
+			ADD		A_in,	4,	B_in 	  				; for last 2 of 4 
+			ADD		A_in1,	4,	B_in1					; *line1
+			ADD		A_in2,	4,	B_in2					; *line2
+
+			;; ---------
+			;; counters
+			;; ---------
+
+			SUB 	B_h,	2,		B_h		; how many times of data-taking 
+			MPY		A_w,	B_h,	A_cnt	; total operation
+			SHRU	A_cnt,	2,		A_cnt	; total operation / 4
+
+			MV		A_cnt,	B_final			; copy counter
+
+			SUB		A_cnt,	2,		A_cnt
+			
+			; out put address
+			ADD		B_out,	2,		A_out
+
+; ----------------------------------------------------------------------;
+;								LOOP									;
+;-----------------------------------------------------------------------;
+
+loop:
+			LDNDW	*A_in++,	x0_h:x0_l	; load 0 line
+			LDNDW	*A_in1++,	x1_h:x1_l
+			LDNDW	*A_in2++,	x2_h:x2_l
+
+			LDNDW	*B_in++,	y0_h:y0_l	; load 0 line 3rd pixel
+			LDNDW	*B_in1++,	y1_h:y1_l
+			LDNDW	*B_in2++,	y2_h:y2_l
+
+; ----------------------------------------------------------------------;
+;	horizontal..
+; ----------------------------------------------------------------------;
+
+			; ------------------------------------
+			; if the input pixel (unsigned 16 bit)
+			; a  . b . c .d
+			; a1 . b1 . c1 .d1  
+			; a2 . b2 . c2 .d2
+			; ------------------------------------
+
+			; 1 * a + 2 * b + 1 * c = chuk_atas (signed 32 bit)
+			; ------------------------------------
+
+			MPYU	ones,	x0_l,	line0_0_l		; multiplication by 1
+			MPYHU	twos,	x0_l,	line0_1_l		; multiply by 2
+			EXTU	x0_h,	16,16,	line0_0_h		; word length data
+			ADD		line0_0_l,	line0_1_l,	chuk0	; sum 2 above values
+			ADD		chuk0,		line0_0_h,	chuk_atas	; sum 3 values
+
+			; 1 * a2 + 2 * b2 + 1 * c3 = chuk_bawah (signed 32 bit)
+			; ------------------------------------
+
+			MPYHU	twos,		x2_l,	line2_1_l	; mult. by 2
+			EXTU	x2_l,	16,16,		line2_0_l	; word-length data	
+			ADD		line2_0_l,	line2_1_l,	chuk1	; sum 2 values
+			EXTU	x2_h,	16,16,		line2_0_h	; word-length data
+			ADD		chuk1,		line2_0_h,	chuk_bawah	; sum 3 values
+
+			; ------------------------------------
+			; chuk_bawah - chuk_atas , horizontal			
+			; ------------------------------------
+
+			SUB		chuk_bawah,	chuk_atas,	pix1_h
+			ABS		pix1_h,	pix1_h
+
+; -----------------------------
+; second pixel
+; -----------------------------
+
+			; 1 * b + 2 * c + 1 * d = chuk_atas_
+			; ------------------------------------
+			
+			MPYU	twos,		x0_h,	line0_0_h_		; multilply by 2
+			EXTU	x0_l,	0,	16,		line0_1_l_
+            ADD		line0_1_l_,	line0_0_h_,	chuk2
+			EXTU	x0_h,	0,	16,		line0_1_h_
+            ADD		chuk2,		line0_1_h_,	chuk_atas_
+			
+			; 1 * b2 + 2 * c2 + 1 * d2 = chuk_bawah_
+			; ------------------------------------
+                                                       
+            MPYHU	ones,		x2_l,	line2_1_l_	
+            MPYU	twos,		x2_h,	line2_0_h_		; mult. by 2
+			EXTU	x2_h,	0,	16,		line2_1_h_
+            ADD		line2_0_h_,	line2_1_l_,	chuk3
+            ADD		chuk3,		line2_1_h_,	chuk_bawah_
+
+			; chuk_bawah_ - chuk_atas_ 
+			; ------------------------------------
+
+			SUB	chuk_bawah_,	chuk_atas_,	pix2_h
+			ABS	pix2_h,	pix2_h
+
+; ---------------------------------
+; third pixel
+; ---------------------------------
+
+			; 1 * c + 2 * d + 1 * e = ychuk_atas
+			; ------------------------------------
+			
+			MPYU	ones,		y0_l,	yline0_0_l
+			MPYHU	twos,		y0_l,	yline0_1_l
+			EXTU	y0_h,	16,	16,		yline0_0_h
+			ADD		yline0_0_l,	yline0_1_l,	ychuk0
+			ADD		ychuk0,		yline0_0_h,	ychuk_atas
+
+			; 1 * c2 + 2 * d2 + 1 * e2 = ychuk_bawah
+
+			MPYU	ones,		y2_l,	yline2_0_l	
+			MPYHU	twos,		y2_l,	yline2_1_l	
+			MPYU	ones,		y2_h,	yline2_0_h	
+			ADD		yline2_0_l,	yline2_1_l,	ychuk1
+			ADD		ychuk1,		yline2_0_h,	ychuk_bawah
+
+			SUB	ychuk_bawah,	ychuk_atas,	pix3_h
+			ABS	pix3_h,	pix3_h
+
+; ---------------------------------
+;	fourth pixel
+; ---------------------------------
+
+			; ------------------------------------------------
+			; 1 * d + 2 * e + 1 * f = ychuk_atas_
+			; ------------------------------------------------
+
+			MPYU	twos,		y0_h,	yline0_0_h_
+			EXTU	y0_l,	0,	16,		yline0_1_l_
+            ADD		yline0_1_l_,	yline0_0_h_,	ychuk2
+			EXTU	y0_h,	0,	16,		yline0_1_h_
+            ADD		ychuk2,			yline0_1_h_,	ychuk_atas_
+
+	 		; ------------------------------------------------
+			; 1 * d2 + 2 * e2 + 1 * f2 = ychuk_bawah_
+			; ------------------------------------------------
+                                                   
+            MPYU	twos,		y2_h,	yline2_0_h_	
+			EXTU	y2_l,	0,	16,		yline2_1_l_
+            MPYHU	ones,		y2_h,	yline2_1_h_	
+            ADD		yline2_0_h_,	yline2_1_l_,	ychuk3
+            ADD		ychuk3,		yline2_1_h_,	ychuk_bawah_
+
+			SUB	ychuk_bawah_,	ychuk_atas_,	pix4_h
+			ABS	pix4_h,	pix4_h
+
+; ----------------------------------------------------------------------;
+; vertical filter mask
+; ----------------------------------------------------------------------;
+
+
+;-------------------------------------------------------------------------------------
+			MPYU	x1_l,	twos,	x1_l_doub			; middle line > pixel 0
+			MPYU	x0_l,	ones,	x0_l_ones			; first line  > pixel 0
+			EXTU	x2_l,	16,	16,	x2_l_ones
+			ADD		x0_l_ones,	x1_l_doub,	pix1temp
+
+			; sum 1st column
+			ADD		pix1temp,	x2_l_ones,	pix1temp
+
+			MPYU	x1_h,	twos,	x1_h_doub			; middle line > pixel 2
+			MPYU	x0_h,	ones,	x0_h_ones			; first line  > pixel 2
+			EXTU	x2_h,	16,	16,	x2_h_ones
+			ADD		x0_h_ones,	x1_h_doub,	pix3temp
+
+			; sum 3rd column
+			ADD		pix3temp,	x2_h_ones,	pix3temp
+
+			; vertical mask col 1&3
+			SUB		pix3temp,	pix1temp,	pixx
+			ABS		pixx,	pixx
+
+			MPYHU	x1_l,	twos,	x1_l_doub1			; middle line > pixel 1
+			EXTU	x0_l,	0,	16,	x0_l_ones1
+			MPYHU	x2_l,	ones,	x2_l_ones1			; third line  > pixel 1
+			ADD		x0_l_ones1,	x1_l_doub1,		pix2temp
+			; sum 2nd column
+			ADD		pix2temp,	x2_l_ones1,		pix2temp
+
+			MPYHU	x1_h,	twos,	x1_h_doub1			; middle line > pixel 3
+			EXTU	x0_h,	0,	16,	x0_h_ones1
+			ADD		x0_h_ones1,	x1_h_doub1,	pix4temp
+			EXTU	x2_h,	0,	16,	x2_h_ones1
+
+			; sum 4th column
+			ADD		pix4temp,	x2_h_ones1, pix4temp
+			; vertical mask col 2&4
+			SUB		pix4temp,	pix2temp,	pix2
+			ABS		pix2,		pix2
+
+			MPYU	y1_h,	twos,	y1_h_doub			; middle line > pixel 4
+			MPYU	y0_h,	ones,	y0_h_ones			; third line  > pixel 4
+			ADD		y0_h_ones,	y1_h_doub,	pix5temp
+			MPYU	y2_h,	ones,	y2_h_ones			; third line  > pixel 4
+			ADD		pix5temp,	y2_h_ones,	pix5temp
+
+			SUB		pix5temp,	pix3temp,	pix3
+			ABS		pix3,		pix3
+
+
+			MPYHU	y1_h,	twos,	y1_h_doub1			; middle line > pixel 5
+			EXTU	y0_h,	0,	16,	y0_h_ones1
+			ADD		y0_h_ones1,	y1_h_doub1,	pix6temp
+			MPYHU	y2_h,	ones,	y2_h_ones1			; third line  > pixel 5 
+			; sum 6th column
+			ADD		pix6temp,	y2_h_ones1,	pix6temp
+
+			; vertical mask col 4&6
+			SUB		pix6temp,	pix4temp,	pix4
+			ABS		pix4, 		pix4
+
+;-------------------------------------------------------------------------------------
+;	vertical + horizontal
+;-------------------------------------------------------------------------------------
+
+			ADD		pixx,	pix1_h,	pix1
+			SUB		pix1,	offset1,	pix1
+			ADD		pix2,	pix2_h,	pix2
+			SUB		pix2,	offset1,	pix2
+			ADD		pix3,	pix3_h,	pix3
+			SUB		pix3,	offset1,	pix3
+			ADD		pix4,	pix4_h,	pix4
+			SUB		pix4,	offset1,	pix4
+
+			; ------------------------------------
+			; saturate to 16 bit
+			; ------------------------------------
+			SPACK2	pix2,	pix1,	pix21
+			SPACK2	pix4,	pix3,	pix43
+			
+			ADD2	pix21,	offset,	pix21
+			ADD2	pix43,	offset,	pix43
+
+			; ------------------------------------
+			; store data
+			; ------------------------------------
+			SUB	B_final,	1,	B_final
+[B_final]	STNDW	pix43:pix21,	*A_out++
+			BDEC	loop,		A_cnt	
+			STNW	pix21,		*A_out
+			
+			
+			.return
+			.endproc
+
+* ======================================================================== *
+*   End of file, "IMG_sobel_3x3_16.sa"                                     *
+* ------------------------------------------------------------------------ *
+*            Copyright (c) 2008 Texas Instruments, Incorporated.           *
+*                           All Rights Reserved.                           *
+* ======================================================================== *
+

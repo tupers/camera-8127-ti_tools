@@ -1,0 +1,9 @@
+package/lib/lib/release/ti.syslink.utils.rtos.bios6/package/package_ti.syslink.utils.rtos.bios6.oem3: package/package_ti.syslink.utils.rtos.bios6.c /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h /opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stdarg.h /opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stddef.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/arm/elf/std.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h /opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stdint.h 
+package/package_ti.syslink.utils.rtos.bios6.c:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stdarg.h:
+/opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stddef.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/arm/elf/std.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt470_5_1_3/include/stdint.h:

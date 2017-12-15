@@ -1,0 +1,22 @@
+package/lib/lib/debug/ti.syslink.utils.rtos.bios6/common/Trace.oe674: ../../common/Trace.c /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/Std.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/OsalPrint.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrv.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/knl/Linux/std_linux.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/usr/Linux/std_linux.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/knl/Qnx/std_qnx.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/IpcCmdBase.h /opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/IoctlDefs.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdio.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdlib.h /opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/linkage.h /opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h 
+../../common/Trace.c:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/Std.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/Trace.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/utils/OsalPrint.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrv.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/TraceDrvDefs.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/xdc/std.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/knl/Linux/std_linux.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/usr/Linux/std_linux.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/knl/Qnx/std_qnx.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/IpcCmdBase.h:
+/opt/Project/Camera/Source/ti_tools/syslink_2_21_02_10/packages/ti/syslink/inc/IoctlDefs.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdarg.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stddef.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/elf/std.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/select.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdio.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdlib.h:
+/opt/Project/Camera/Source/ti_tools/xdctools_3_25_05_94/packages/ti/targets/std.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/linkage.h:
+/opt/Project/Camera/Source/ti_tools/cgt6x_7_4_6/include/stdint.h:
